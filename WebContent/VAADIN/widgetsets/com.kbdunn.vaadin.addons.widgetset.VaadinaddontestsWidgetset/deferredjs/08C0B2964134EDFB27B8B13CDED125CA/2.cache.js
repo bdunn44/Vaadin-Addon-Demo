@@ -1,0 +1,1 @@
+$wnd.com_kbdunn_vaadin_addons_widgetset_VaadinaddontestsWidgetset.runAsyncCallback2('ibb(1169,1,$wd);_.vc=function t4b(){sUb((!lUb&&(lUb=new xUb),lUb),this.b.e)};trd(Wh)(2);\n//# sourceURL=com.kbdunn.vaadin.addons.widgetset.VaadinaddontestsWidgetset-2.js\n')

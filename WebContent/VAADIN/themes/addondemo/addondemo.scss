@@ -1,0 +1,16 @@
+/* Import the Valo theme */
+@import "../valo/_valo";
+
+@mixin addondemo {
+	@include valo;
+	
+	.icon-preview-label { text-align: center; }
+	
+	#links li {
+		display: inline;
+		list-style-type: none;
+		padding-left: 20px;
+	}
+	
+	/*.v-ui > .v-verticallayout { height: 100%; }*/
+}

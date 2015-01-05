@@ -16,6 +16,8 @@ local.properties
 .settings/
 .loadpath
 WebContent/WEB-INF/
+WebContent/VAADIN/songs/*
+WebContent/VAADIN/videos/*
 
 # External tool builders
 .externalToolBuilders/

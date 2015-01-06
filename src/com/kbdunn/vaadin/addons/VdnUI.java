@@ -56,7 +56,7 @@ public class VdnUI extends UI  {
 		layout.addComponent(new Label(footer, ContentMode.HTML));
 		
 		if (request.getParameter("a") != null) {
-			String addon = request.getParameter("addon");
+			String addon = request.getParameter("a");
 			if ("FontAwesomeLabel".equals(addon)) tabsheet.setSelectedTab(0);
 			else if ("MejsPlayer".equals(addon)) tabsheet.setSelectedTab(1);
 		}

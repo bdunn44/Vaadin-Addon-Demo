@@ -97,9 +97,9 @@ public class FontAwesomeAddonLayout extends VerticalLayout {
 		FontAwesomeLabel icon = baseConfig.getCurrentLabel();
 		icon.addStyleName(ValoTheme.LABEL_COLORED);
 		icon.addStyleName("icon-preview-label");
-		if (this.stackedConfig.isVisible()) {
-			stackedConfig.setIcon(this.stackedConfig.getCurrentIcon());
-			FontAwesomeLabel stacked = this.stackedConfig.getCurrentLabel();
+		if (stackedConfig.isVisible()) {
+			stackedConfig.setIcon(stackedConfig.getCurrentIcon());
+			FontAwesomeLabel stacked = stackedConfig.getCurrentLabel();
 			icon.stack(stacked);
 			codeLabel.setValue(baseConfig.getLabelBuilder() + ".stack(" + stackedConfig.getLabelBuilder() + ")");
 			if (stackedConfig.stackSizeReversed()) {
@@ -169,7 +169,7 @@ public class FontAwesomeAddonLayout extends VerticalLayout {
 				icon.addItem(fa.name());
 			}
 			
-			size = getEmptyOptionGroup();
+			size = getEmptyComboBox();
 			size.setCaption("Size:");
 			for (String s : SIZES) {
 				size.addItem(s);
@@ -177,7 +177,7 @@ public class FontAwesomeAddonLayout extends VerticalLayout {
 			addComponent(size);
 			setComponentAlignment(size, Alignment.MIDDLE_LEFT);
 			
-			rotation = getEmptyOptionGroup();
+			rotation = getEmptyComboBox();
 			rotation.setCaption("Rotation:");
 			for (String s : ROTATIONS) {
 				rotation.addItem(s);
@@ -185,7 +185,7 @@ public class FontAwesomeAddonLayout extends VerticalLayout {
 			addComponent(rotation);
 			setComponentAlignment(rotation, Alignment.MIDDLE_LEFT);
 			
-			flip = getEmptyOptionGroup();
+			flip = getEmptyComboBox();
 			flip.setCaption("Flip:");
 			for (String s : FLIPS) {
 				flip.addItem(s);
@@ -193,7 +193,7 @@ public class FontAwesomeAddonLayout extends VerticalLayout {
 			addComponent(flip);
 			setComponentAlignment(flip, Alignment.MIDDLE_LEFT);
 			
-			pull = getEmptyOptionGroup();
+			pull = getEmptyComboBox();
 			pull.setCaption("Pull:");
 			for (String s : PULLS) {
 				pull.addItem(s);
@@ -220,7 +220,7 @@ public class FontAwesomeAddonLayout extends VerticalLayout {
 			other.addValueChangeListener(this);
 		}
 		
-		private ComboBox getEmptyOptionGroup() {
+		private ComboBox getEmptyComboBox() {
 			ComboBox og = new ComboBox();
 			og.addStyleName(ValoTheme.COMBOBOX_TINY);
 			og.setImmediate(true);

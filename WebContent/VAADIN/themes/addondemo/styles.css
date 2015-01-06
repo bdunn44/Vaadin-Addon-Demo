@@ -11,6 +11,7 @@
 	font: normal normal normal 14px/1 FontAwesomeLabelAddon;
 	font-size: inherit;
 	text-rendering: auto;
+	text-align: center;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
@@ -35,6 +36,10 @@
 
 .fa-5x {
 	font-size: 5em;
+}
+
+.fa-6x {
+	font-size: 6em;
 }
 
 .fa-fw {

@@ -36,7 +36,6 @@ public class FontAwesomeAddonLayout extends VerticalLayout {
 	
 	private void buildLayout() {
 		Panel controlPanel = new Panel();
-		controlPanel.setWidth("100%");
 		addComponent(controlPanel);
 		VerticalLayout controlLayout = new VerticalLayout();
 		controlLayout.setMargin(true);
@@ -45,6 +44,7 @@ public class FontAwesomeAddonLayout extends VerticalLayout {
 		
 		baseConfig = new IconConfigurator(this);
 		baseConfig.setCaption("Base Icon");
+		baseConfig.hideReverseStackSizeOption();
 		controlLayout.addComponent(baseConfig);
 		stackedConfig = new IconConfigurator(this);
 		stackedConfig.setCaption("Stacked Icon");
@@ -94,6 +94,8 @@ public class FontAwesomeAddonLayout extends VerticalLayout {
 			stackedConfig.setIcon(this.stackedConfig.getCurrentIcon());
 			FontAwesomeLabel stacked = this.stackedConfig.getCurrentLabel();
 			icon.stack(stacked);
+			if (stackedConfig.stackSizeReversed()) 
+				icon.reverseStackSize();
 		}
 		iconLayout.removeAllComponents();
 		iconLayout.addComponent(icon);
@@ -135,7 +137,6 @@ public class FontAwesomeAddonLayout extends VerticalLayout {
 			this.parent = parent;
 			addStyleName(ValoTheme.LAYOUT_HORIZONTAL_WRAPPING);
 			setSpacing(true);
-			setWidth("100%");
 			build();
 		}
 		
@@ -154,7 +155,6 @@ public class FontAwesomeAddonLayout extends VerticalLayout {
 			}
 			
 			size = getEmptyOptionGroup();
-			size.setImmediate(true);
 			size.setCaption("Size:");
 			for (String s : SIZES) {
 				size.addItem(s);
@@ -163,7 +163,6 @@ public class FontAwesomeAddonLayout extends VerticalLayout {
 			setComponentAlignment(size, Alignment.MIDDLE_LEFT);
 			
 			rotation = getEmptyOptionGroup();
-			rotation.setImmediate(true);
 			rotation.setCaption("Rotation:");
 			for (String s : ROTATIONS) {
 				rotation.addItem(s);
@@ -172,7 +171,6 @@ public class FontAwesomeAddonLayout extends VerticalLayout {
 			setComponentAlignment(rotation, Alignment.MIDDLE_LEFT);
 			
 			flip = getEmptyOptionGroup();
-			flip.setImmediate(true);
 			flip.setCaption("Flip:");
 			for (String s : FLIPS) {
 				flip.addItem(s);
@@ -181,7 +179,6 @@ public class FontAwesomeAddonLayout extends VerticalLayout {
 			setComponentAlignment(flip, Alignment.MIDDLE_LEFT);
 			
 			pull = getEmptyOptionGroup();
-			pull.setImmediate(true);
 			pull.setCaption("Pull:");
 			for (String s : PULLS) {
 				pull.addItem(s);
@@ -190,10 +187,9 @@ public class FontAwesomeAddonLayout extends VerticalLayout {
 			setComponentAlignment(pull, Alignment.MIDDLE_LEFT);
 			
 			other = new OptionGroup();
+			other.setCaption("Other Options:");
 			other.addStyleName(ValoTheme.OPTIONGROUP_SMALL);
 			other.setNewItemsAllowed(false);
-			other.setImmediate(true);
-			other.setCaption("Other Options:");
 			other.setMultiSelect(true);
 			for (String s : OTHERS) {
 				other.addItem(s);
@@ -212,10 +208,15 @@ public class FontAwesomeAddonLayout extends VerticalLayout {
 		private ComboBox getEmptyOptionGroup() {
 			ComboBox og = new ComboBox();
 			og.addStyleName(ValoTheme.COMBOBOX_TINY);
+			og.setImmediate(true);
 			og.setNewItemsAllowed(false);
 			og.setNullSelectionAllowed(true);
 			og.setNullSelectionItemId(DEFAULT);
 			return og;
+		}
+		
+		protected FontAwesome getCurrentIcon() {
+			return FontAwesome.valueOf((String) icon.getValue());
 		}
 		
 		protected FontAwesomeLabel getCurrentLabel() {
@@ -264,6 +265,19 @@ public class FontAwesomeAddonLayout extends VerticalLayout {
 					current.pullRight();
 			}
 			
+			for (String s : getOtherOptions()) {
+				if (BORDER.equals(s))
+					current.enableBorder();
+				else if (SPIN.equals(s))
+					current.spin();
+				else if (INVERSE_COLOR.equals(s))
+					current.inverseColor();
+			}
+			
+			return current;
+		}
+		
+		private List<String> getOtherOptions() {
 			Object others = this.other.getValue();
 			List<String> otherOptions =  new ArrayList<String>();
 			if (others instanceof Collection) {
@@ -273,23 +287,15 @@ public class FontAwesomeAddonLayout extends VerticalLayout {
 			} else if (this.other.getValue() instanceof String) {
 				otherOptions.add((String) this.other.getValue());
 			}
-			for (String s : otherOptions) {
-				if (BORDER.equals(s))
-					current.enableBorder();
-				else if (SPIN.equals(s))
-					current.spin();
-				else if (INVERSE_COLOR.equals(s))
-					current.inverseColor();
-				else if (REVERSE_STACK_SIZE.equals(s))
-					current.reverseStackSize();
-			}
-			
-			
-			return current;
+			return otherOptions;
 		}
 		
-		protected FontAwesome getCurrentIcon() {
-			return FontAwesome.valueOf((String) icon.getValue());
+		protected void hideReverseStackSizeOption() {
+			other.removeItem(REVERSE_STACK_SIZE);
+		}
+		
+		protected boolean stackSizeReversed() {
+			return getOtherOptions().contains(REVERSE_STACK_SIZE);
 		}
 
 		@Override

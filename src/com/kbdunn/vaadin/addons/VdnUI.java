@@ -32,8 +32,10 @@ public class VdnUI extends UI  {
 		layout.setSpacing(true);
 		
 		String sbody = "<h2 style='margin:0 30px;'>Welcome to Bryson's Addon Demo App!</h2>";
-		sbody += "<p style='font-size: 16px; margin: 10px 30px;'>Use the tabs below to browse addons. "
-				+ "You can find the source code for this demo on GitHub <a href='https://github.com/bdunn44/Vaadin-Addon-Demo'>here</a>.</p>";
+		sbody += "<p style='font-size: 16px; margin: 10px 30px;'>";
+			sbody += "Use the tabs below to browse my addons. ";
+			sbody += "You can find the source code for this demo on GitHub <a href='https://github.com/bdunn44/Vaadin-Addon-Demo'>here</a>.";
+		sbody+= "</p>";
 		Label body = new Label(sbody, ContentMode.HTML);
 		layout.addComponent(body);
 		

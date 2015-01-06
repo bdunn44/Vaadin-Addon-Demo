@@ -167,6 +167,7 @@ public class FontAwesomeAddonLayout extends VerticalLayout {
 			setComponentAlignment(icon, Alignment.MIDDLE_LEFT);
 			for (FontAwesome fa : FontAwesome.values()) {
 				icon.addItem(fa.name());
+				icon.setItemIcon(fa.name(), fa);
 			}
 			
 			size = getEmptyComboBox();

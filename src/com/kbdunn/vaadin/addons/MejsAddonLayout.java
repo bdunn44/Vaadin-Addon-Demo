@@ -43,8 +43,8 @@ public class MejsAddonLayout extends VerticalLayout implements
 	
 	static {
 		MEDIA_FILES = new LinkedHashMap<String, ThemeResource>();
-		MEDIA_FILES.put(SONG_BONOBO, new ThemeResource("songs/Bonobo-Noctuary.mp3"));
-		MEDIA_FILES.put(SONG_ACDC, new ThemeResource("songs/ACDC-Back_in_Black_sample.ogg"));
+		MEDIA_FILES.put(SONG_BONOBO, new ThemeResource("songs/01_Noctuary.mp3"));
+		MEDIA_FILES.put(SONG_ACDC, new ThemeResource("songs/ACDC_-_Back_In_Black-sample.ogg"));
 		MEDIA_FILES.put(VIDEO_FAKER, new ThemeResource("videos/Chet_Faker-Archangel_Live_Sessions.mp4"));
 		MEDIA_FILES.put(VIDEO_ALTJ, new ThemeResource("videos/alt-J-Left_Hand_Free.mp4"));
 	}

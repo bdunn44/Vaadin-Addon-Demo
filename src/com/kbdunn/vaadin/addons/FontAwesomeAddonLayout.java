@@ -25,8 +25,8 @@ public class FontAwesomeAddonLayout extends VerticalLayout {
 
 	private static final long serialVersionUID = 1L;
 	private IconConfigurator baseConfig, stackedConfig;
-	private Panel iconDisplay;
-	private HorizontalLayout iconLayout;
+	private Label codeLabel;
+	private VerticalLayout iconLayout;
 
 	public FontAwesomeAddonLayout() {
 		setMargin(true);
@@ -66,14 +66,21 @@ public class FontAwesomeAddonLayout extends VerticalLayout {
 			}
 		}));
 		
-		iconDisplay = new Panel();
+		codeLabel = new Label(" ", ContentMode.PREFORMATTED);
+		codeLabel.setSizeUndefined();
+		codeLabel.addStyleName(ValoTheme.LABEL_TINY);
+		codeLabel.addStyleName(ValoTheme.LABEL_NO_MARGIN);
+		addComponent(codeLabel);
+		setComponentAlignment(codeLabel, Alignment.MIDDLE_CENTER);
+		
+		Panel iconDisplay = new Panel();
 		iconDisplay.addStyleName(ValoTheme.PANEL_WELL);
 		iconDisplay.setHeight("200px");
 		iconDisplay.setWidth("400px");
 		addComponent(iconDisplay);
 		setComponentAlignment(iconDisplay, Alignment.MIDDLE_CENTER);
 		
-		iconLayout = new HorizontalLayout();
+		iconLayout = new VerticalLayout();
 		iconLayout.setSizeFull();
 		iconLayout.setMargin(true);
 		iconDisplay.setContent(iconLayout);
@@ -86,16 +93,22 @@ public class FontAwesomeAddonLayout extends VerticalLayout {
 	}
 	
 	private void refresh() {
-		baseConfig.setIcon(this.baseConfig.getCurrentIcon());
-		FontAwesomeLabel icon = this.baseConfig.getCurrentLabel();
+		baseConfig.setIcon(baseConfig.getCurrentIcon());
+		FontAwesomeLabel icon = baseConfig.getCurrentLabel();
 		icon.addStyleName(ValoTheme.LABEL_COLORED);
 		icon.addStyleName("icon-preview-label");
 		if (this.stackedConfig.isVisible()) {
 			stackedConfig.setIcon(this.stackedConfig.getCurrentIcon());
 			FontAwesomeLabel stacked = this.stackedConfig.getCurrentLabel();
 			icon.stack(stacked);
-			if (stackedConfig.stackSizeReversed()) 
+			codeLabel.setValue(baseConfig.getLabelBuilder() + ".stack(" + stackedConfig.getLabelBuilder() + ")");
+			if (stackedConfig.stackSizeReversed()) {
 				icon.reverseStackSize();
+				codeLabel.setValue(codeLabel.getValue() + ".reverseStackSize()");
+			}
+			codeLabel.setValue(codeLabel.getValue() + ";");
+		} else {
+			codeLabel.setValue(baseConfig.getLabelBuilder() + ";");
 		}
 		iconLayout.removeAllComponents();
 		iconLayout.addComponent(icon);
@@ -132,6 +145,8 @@ public class FontAwesomeAddonLayout extends VerticalLayout {
 		private FontAwesomeAddonLayout parent;
 		private ComboBox icon, size, rotation, flip, pull;
 		private OptionGroup other;
+		private String labelBuilder;
+		private FontAwesomeLabel currentLabel;
 		
 		public IconConfigurator(FontAwesomeAddonLayout parent) {
 			this.parent = parent;
@@ -220,61 +235,11 @@ public class FontAwesomeAddonLayout extends VerticalLayout {
 		}
 		
 		protected FontAwesomeLabel getCurrentLabel() {
-			FontAwesomeLabel current = getCurrentIcon().getLabel();
-			
-			String size = (String) this.size.getValue();
-			String rotation = (String) this.rotation.getValue();
-			String flip = (String) this.flip.getValue();
-			String pull = (String) this.pull.getValue();
-			
-			if (!DEFAULT.equals(size)) {
-				if (SIZE_LARGE.equals(size))
-					current.setSizeLg();
-				else if (SIZE_2X.equals(size))
-					current.setSize2x();
-				else if (SIZE_3X.equals(size))
-					current.setSize3x();
-				else if (SIZE_4X.equals(size))
-					current.setSize4x();
-				else if (SIZE_5X.equals(size))
-					current.setSize5x();
-				else if (SIZE_6X.equals(size))
-					current.setSize6x();
-			}
-			
-			if (!DEFAULT.equals(rotation)) {
-				if (ROTATE_90.equals(rotation))
-					current.rotate90();
-				else if (ROTATE_180.equals(rotation))
-					current.rotate180();
-				else if (ROTATE_270.equals(rotation))
-					current.rotate270();
-			}
-			
-			if (!DEFAULT.equals(flip)) {
-				if (FLIP_HORIZONTAL.equals(flip))
-					current.flipHorizontal();
-				else if (FLIP_VERTICAL.equals(flip))
-					current.flipVertical();
-			}
-			
-			if (!DEFAULT.equals(pull)) {
-				if (PULL_LEFT.equals(pull))
-					current.pullLeft();
-				else if (PULL_RIGHT.equals(pull))
-					current.pullRight();
-			}
-			
-			for (String s : getOtherOptions()) {
-				if (BORDER.equals(s))
-					current.enableBorder();
-				else if (SPIN.equals(s))
-					current.spin();
-				else if (INVERSE_COLOR.equals(s))
-					current.inverseColor();
-			}
-			
-			return current;
+			return currentLabel;
+		}
+		
+		protected String getLabelBuilder() {
+			return labelBuilder;
 		}
 		
 		private List<String> getOtherOptions() {
@@ -297,9 +262,88 @@ public class FontAwesomeAddonLayout extends VerticalLayout {
 		protected boolean stackSizeReversed() {
 			return getOtherOptions().contains(REVERSE_STACK_SIZE);
 		}
-
+		
+		private void refresh() {
+			currentLabel = getCurrentIcon().getLabel();
+			labelBuilder = "FontAwesome." + ((String) icon.getValue()) + ".getLabel()";
+			
+			String size = (String) this.size.getValue();
+			String rotation = (String) this.rotation.getValue();
+			String flip = (String) this.flip.getValue();
+			String pull = (String) this.pull.getValue();
+			
+			if (!DEFAULT.equals(size)) {
+				if (SIZE_LARGE.equals(size)) {
+					labelBuilder += ".setSizeLg()";
+					currentLabel.setSizeLg();
+				} else if (SIZE_2X.equals(size)) {
+					labelBuilder += ".setSize2x()";
+					currentLabel.setSize2x();
+				} else if (SIZE_3X.equals(size)) {
+					labelBuilder += ".setSize3x()";
+					currentLabel.setSize3x();
+				} else if (SIZE_4X.equals(size)) {
+					labelBuilder += ".setSize4x()";
+					currentLabel.setSize4x();
+				} else if (SIZE_5X.equals(size)) {
+					labelBuilder += ".setSize5x()";
+					currentLabel.setSize5x();
+				} else if (SIZE_6X.equals(size)) {
+					labelBuilder += ".setSize6x()";
+					currentLabel.setSize6x();
+				}
+			}
+			
+			if (!DEFAULT.equals(rotation)) {
+				if (ROTATE_90.equals(rotation)) {
+					labelBuilder += ".rotate90()";
+					currentLabel.rotate90();
+				} else if (ROTATE_180.equals(rotation)) {
+					labelBuilder += ".rotate180()";
+					currentLabel.rotate180();
+				} else if (ROTATE_270.equals(rotation)) {
+					labelBuilder += ".rotate270()";
+					currentLabel.rotate270();
+				}
+			}
+			
+			if (!DEFAULT.equals(flip)) {
+				if (FLIP_HORIZONTAL.equals(flip)) {
+					labelBuilder += ".flipHorizontal()";
+					currentLabel.flipHorizontal();
+				} else if (FLIP_VERTICAL.equals(flip)) {
+					labelBuilder += ".flipVertical()";
+					currentLabel.flipVertical();
+				}
+			}
+			
+			if (!DEFAULT.equals(pull)) {
+				if (PULL_LEFT.equals(pull)) {
+					labelBuilder += ".pullLeft()";
+					currentLabel.pullLeft();
+				} else if (PULL_RIGHT.equals(pull)) {
+					labelBuilder += ".pullRight()";
+					currentLabel.pullRight();
+				}
+			}
+			
+			for (String s : getOtherOptions()) {
+				if (BORDER.equals(s)) {
+					labelBuilder += ".enableBorder()";
+					currentLabel.enableBorder();
+				} else if (SPIN.equals(s)) {
+					labelBuilder += ".spin()";
+					currentLabel.spin();
+				} else if (INVERSE_COLOR.equals(s)) {
+					labelBuilder += ".inverseColor()";
+					currentLabel.inverseColor();
+				}
+			}
+		}
+		
 		@Override
 		public void valueChange(ValueChangeEvent event) {
+			refresh();
 			parent.refresh();
 		}
 	}

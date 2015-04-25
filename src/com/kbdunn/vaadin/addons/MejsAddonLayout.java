@@ -15,6 +15,7 @@ import com.kbdunn.vaadin.addons.mediaelement.SeekedListener;
 import com.kbdunn.vaadin.addons.mediaelement.VolumeChangedListener;
 import com.vaadin.data.Property.ValueChangeEvent;
 import com.vaadin.data.Property.ValueChangeListener;
+import com.vaadin.server.ExternalResource;
 import com.vaadin.server.Resource;
 import com.vaadin.server.ThemeResource;
 import com.vaadin.shared.ui.label.ContentMode;
@@ -39,6 +40,8 @@ public class MejsAddonLayout extends VerticalLayout implements
 	private static Map<String, Resource> MEDIA_FILES;
 	private static final String SONG_ACDC = "AC/DC - Back in Black (.ogg)";
 	private static final String SONG_BONOBO = "Bonobo - Noctuary (.mp3)";
+	private static final String VIDEO_YOUTUBE = "The Art of Flight - Trailer (YouTube)";
+	//private static final String VIDEO_VIMEO = "The Art of Flight - Trailer (Vimeo)";
 	private static final String VIDEO_FAKER = "Chet Faker - Archangel (.mp4)";
 	private static final String VIDEO_ALTJ = "alt-J - Left Hand Free (.mp4)";
 	
@@ -47,7 +50,8 @@ public class MejsAddonLayout extends VerticalLayout implements
 		MEDIA_FILES.put(SONG_BONOBO, new ThemeResource("songs/01_Noctuary.mp3"));
 		MEDIA_FILES.put(SONG_ACDC, new ThemeResource("songs/ACDC_-_Back_In_Black-sample.ogg"));
 		MEDIA_FILES.put(VIDEO_FAKER, new ThemeResource("videos/Chet_Faker-Archangel_Live_Sessions.mp4"));
-		MEDIA_FILES.put(VIDEO_ALTJ, new ThemeResource("videos/alt-J-Left_Hand_Free.mp4"));
+		MEDIA_FILES.put(VIDEO_YOUTUBE, new ExternalResource("https://www.youtube.com/watch?v=kh29_SERH0Y"));
+		//MEDIA_FILES.put(VIDEO_VIMEO, new ExternalResource("https://vimeo.com/20065250"));
 		MEDIA_FILES.put(VIDEO_ALTJ, new ThemeResource("videos/alt-J-Left_Hand_Free.mp4"));
 	}
 	
@@ -95,36 +99,6 @@ public class MejsAddonLayout extends VerticalLayout implements
 		link.addStyleName(ValoTheme.LABEL_SMALL);
 		addComponent(link);
 		setComponentAlignment(link, Alignment.BOTTOM_RIGHT);
-	}
-	
-	private void showAudio() {
-		MediaComponent newplayer = new MediaComponent(MediaComponent.Type.AUDIO);
-		playerLayout.replaceComponent(player, newplayer);
-		player = newplayer;
-		player.addVolumeChangeListener(this);
-		player.addCanPlayListener(this);
-		player.addLoadedDataListener(this);
-		player.addLoadedMetadataListener(this);
-		player.addPauseListener(this);
-		player.addPlaybackEndedListener(this);
-		player.addPlayingListener(this);
-		player.addSeekedListener(this);
-		player.addPlayListener(this);
-	}
-	
-	private void showVideo() {
-		MediaComponent newplayer = new MediaComponent(MediaComponent.Type.VIDEO);
-		playerLayout.replaceComponent(player, newplayer);
-		player = newplayer;
-		player.addVolumeChangeListener(this);
-		player.addCanPlayListener(this);
-		player.addLoadedDataListener(this);
-		player.addLoadedMetadataListener(this);
-		player.addPauseListener(this);
-		player.addPlaybackEndedListener(this);
-		player.addPlayingListener(this);
-		player.addSeekedListener(this);
-		player.addPlayListener(this);
 	}
 
 	@Override
@@ -243,11 +217,6 @@ public class MejsAddonLayout extends VerticalLayout implements
 				@Override
 				public void valueChange(ValueChangeEvent event) {
 					String key = (String) resources.getValue();
-					if (SONG_ACDC.equals(key) || SONG_BONOBO.equals(key)) {
-						showAudio();
-					} else {
-						showVideo();
-					}
 					player.setSource(MEDIA_FILES.get(key));
 					nowPlaying.setValue("Now Playing: " + key);
 				}

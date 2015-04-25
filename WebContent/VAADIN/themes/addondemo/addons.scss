@@ -1,12 +1,12 @@
 /* This file is automatically managed and will be overwritten from time to time. */
 /* Do not manually edit this file. */
 
-/* Provided by font-awesome-label-1.1.8.jar */
-@import "../../../VAADIN/addons/font-awesome-4.3.0/css/_font-awesome.scss";
+/* Provided by font-awesome-label-1.1.9.jar */
+@import "../../../VAADIN/addons/font-awesome-4.3.0/font-awesome.scss";
 
 
 /* Import and include this mixin into your project theme to include the addon themes */
 @mixin addons {
-	@include _font-awesome;
+	@include font-awesome;
 }
 

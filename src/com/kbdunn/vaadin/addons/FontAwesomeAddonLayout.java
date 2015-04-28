@@ -232,6 +232,7 @@ public class FontAwesomeAddonLayout extends VerticalLayout {
 		}
 		
 		protected FontAwesome getCurrentIcon() {
+			if (icon.getValue() == null) return FontAwesome.QUESTION;
 			return FontAwesome.valueOf((String) icon.getValue());
 		}
 		

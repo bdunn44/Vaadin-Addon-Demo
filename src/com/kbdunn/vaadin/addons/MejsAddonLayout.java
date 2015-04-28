@@ -6,7 +6,7 @@ import java.util.Map;
 import com.kbdunn.vaadin.addons.mediaelement.CanPlayListener;
 import com.kbdunn.vaadin.addons.mediaelement.LoadedDataListener;
 import com.kbdunn.vaadin.addons.mediaelement.LoadedMetadataListener;
-import com.kbdunn.vaadin.addons.mediaelement.MediaComponent;
+import com.kbdunn.vaadin.addons.mediaelement.MediaElementPlayer;
 import com.kbdunn.vaadin.addons.mediaelement.PausedListener;
 import com.kbdunn.vaadin.addons.mediaelement.PlaybackEndedListener;
 import com.kbdunn.vaadin.addons.mediaelement.PlayedListener;
@@ -55,7 +55,7 @@ public class MejsAddonLayout extends VerticalLayout implements
 		MEDIA_FILES.put(VIDEO_ALTJ, new ThemeResource("videos/alt-J-Left_Hand_Free.mp4"));
 	}
 	
-	private MediaComponent player;
+	private MediaElementPlayer player;
 	private Label nowPlaying;
 	private ComboBox resources;
 	private Button play, pause, setVolume, setCurrentTime, mute, unmute;
@@ -87,7 +87,7 @@ public class MejsAddonLayout extends VerticalLayout implements
 		h1.addStyleName(ValoTheme.LABEL_NO_MARGIN);
 		playerLayout.addComponent(h1);
 		playerLayout.setComponentAlignment(h1, Alignment.MIDDLE_CENTER);
-		player = new MediaComponent(MediaComponent.Type.AUDIO);
+		player = new MediaElementPlayer();
 		nowPlaying = new Label();
 		playerLayout.addComponent(nowPlaying);
 		playerLayout.setComponentAlignment(nowPlaying, Alignment.MIDDLE_CENTER);
@@ -102,62 +102,62 @@ public class MejsAddonLayout extends VerticalLayout implements
 	}
 
 	@Override
-	public void volumeChanged(MediaComponent component) {
+	public void volumeChanged(MediaElementPlayer component) {
 		Notification.show("Volume Changed!", Notification.Type.TRAY_NOTIFICATION);
 		volume.setValue(String.valueOf(component.getVolume()));
 	}
 
 	@Override
-	public void seeked(MediaComponent component) {
+	public void seeked(MediaElementPlayer component) {
 		Notification.show("Seeked!", Notification.Type.TRAY_NOTIFICATION);
 		currentTime.setValue(String.valueOf(component.getCurrentTime()));
 		duration.setValue(String.valueOf(component.getDuration()));
 	}
 	
 	@Override
-	public void played(MediaComponent component) {
+	public void played(MediaElementPlayer component) {
 		Notification.show("Played!", Notification.Type.TRAY_NOTIFICATION);
 		currentTime.setValue(String.valueOf(component.getCurrentTime()));
 		duration.setValue(String.valueOf(component.getDuration()));
 	}
 
 	@Override
-	public void paused(MediaComponent component) {
+	public void paused(MediaElementPlayer component) {
 		Notification.show("Paused!", Notification.Type.TRAY_NOTIFICATION);
 		currentTime.setValue(String.valueOf(component.getCurrentTime()));
 		duration.setValue(String.valueOf(component.getDuration()));
 	}
 
 	@Override
-	public void metadataLoaded(MediaComponent component) {
+	public void metadataLoaded(MediaElementPlayer component) {
 		Notification.show("Metadata Loaded!", Notification.Type.TRAY_NOTIFICATION);
 		currentTime.setValue(String.valueOf(component.getCurrentTime()));
 		duration.setValue(String.valueOf(component.getDuration()));
 	}
 
 	@Override
-	public void dataLoaded(MediaComponent component) {
+	public void dataLoaded(MediaElementPlayer component) {
 		Notification.show("Data Loaded!", Notification.Type.TRAY_NOTIFICATION);
 		currentTime.setValue(String.valueOf(component.getCurrentTime()));
 		duration.setValue(String.valueOf(component.getDuration()));
 	}
 
 	@Override
-	public void canPlay(MediaComponent component) {
+	public void canPlay(MediaElementPlayer component) {
 		Notification.show("Can Play!", Notification.Type.TRAY_NOTIFICATION);
 		currentTime.setValue(String.valueOf(component.getCurrentTime()));
 		duration.setValue(String.valueOf(component.getDuration()));
 	}
 
 	@Override
-	public void playing(MediaComponent component) {
+	public void playing(MediaElementPlayer component) {
 		Notification.show("Playing!", Notification.Type.TRAY_NOTIFICATION);
 		currentTime.setValue(String.valueOf(component.getCurrentTime()));
 		duration.setValue(String.valueOf(component.getDuration()));
 	}
 
 	@Override
-	public void playbackEnded(MediaComponent component) {
+	public void playbackEnded(MediaElementPlayer component) {
 		Notification.show("Playback Ended!", Notification.Type.TRAY_NOTIFICATION);
 		currentTime.setValue(String.valueOf(component.getCurrentTime()));
 		duration.setValue(String.valueOf(component.getDuration()));

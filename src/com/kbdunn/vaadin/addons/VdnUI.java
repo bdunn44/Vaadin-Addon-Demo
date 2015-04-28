@@ -21,6 +21,7 @@ public class VdnUI extends UI  {
 	@Override
 	protected void init(VaadinRequest request) {
 		setSizeFull();
+		getPage().setTitle("Addon Demo App");
 		Panel content = new Panel();
 		content.setSizeFull();
 		setContent(content);
@@ -59,8 +60,13 @@ public class VdnUI extends UI  {
 		
 		if (request.getParameter("a") != null) {
 			String addon = request.getParameter("a");
-			if ("FontAwesomeLabel".equals(addon)) tabsheet.setSelectedTab(0);
-			else if ("MejsPlayer".equals(addon)) tabsheet.setSelectedTab(1);
+			if ("FontAwesomeLabel".equals(addon)) {
+				tabsheet.setSelectedTab(0);
+				getPage().setTitle("Font Awesome Label");
+			} else if ("MejsPlayer".equals(addon)) {
+				tabsheet.setSelectedTab(1);
+				getPage().setTitle("MediaElement.js Player");
+			}
 		}
 	}
 }

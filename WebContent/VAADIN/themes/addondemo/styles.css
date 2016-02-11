@@ -1,7 +1,7 @@
 @font-face {
 	font-family: "FontAwesomeLabelAddon";
-	src: url(../../../VAADIN/addons/font-awesome-label/fontawesome-webfont.eot?v=4.3.0);
-	src: url(../../../VAADIN/addons/font-awesome-label/fontawesome-webfont.eot?#iefix&v=4.3.0) format("embedded-opentype"), url(../../../VAADIN/addons/font-awesome-label/fontawesome-webfont.woff2?v=4.3.0) format("woff2"), url(../../../VAADIN/addons/font-awesome-label/fontawesome-webfont.woff?v=4.3.0) format("woff"), url(../../../VAADIN/addons/font-awesome-label/fontawesome-webfont.ttf?v=4.3.0) format("truetype"), url(../../../VAADIN/addons/font-awesome-label/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular) format("svg");
+	src: url(../../../VAADIN/addons/font-awesome-label/fontawesome-webfont.eot?v=4.5.0);
+	src: url(../../../VAADIN/addons/font-awesome-label/fontawesome-webfont.eot?#iefix&v=4.5.0) format("embedded-opentype"), url(../../../VAADIN/addons/font-awesome-label/fontawesome-webfont.woff2?v=4.5.0) format("woff2"), url(../../../VAADIN/addons/font-awesome-label/fontawesome-webfont.woff?v=4.5.0) format("woff"), url(../../../VAADIN/addons/font-awesome-label/fontawesome-webfont.ttf?v=4.5.0) format("truetype"), url(../../../VAADIN/addons/font-awesome-label/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular) format("svg");
 	font-weight: normal;
 	font-style: normal;
 }
@@ -100,6 +100,9 @@
 @keyframes valo-animate-in-slide-down {
 		0% {
 		-webkit-transform: translateY(-100%);
+		-moz-transform: translateY(-100%);
+		-ms-transform: translateY(-100%);
+		-o-transform: translateY(-100%);
 		transform: translateY(-100%);
 	}
 	}
@@ -119,6 +122,9 @@
 @keyframes valo-animate-in-slide-up {
 		0% {
 		-webkit-transform: translateY(100%);
+		-moz-transform: translateY(100%);
+		-ms-transform: translateY(100%);
+		-o-transform: translateY(100%);
 		transform: translateY(100%);
 	}
 	}
@@ -138,6 +144,9 @@
 @keyframes valo-animate-in-slide-left {
 		0% {
 		-webkit-transform: translateX(100%);
+		-moz-transform: translateX(100%);
+		-ms-transform: translateX(100%);
+		-o-transform: translateX(100%);
 		transform: translateX(100%);
 	}
 	}
@@ -157,6 +166,9 @@
 @keyframes valo-animate-in-slide-right {
 		0% {
 		-webkit-transform: translateX(-100%);
+		-moz-transform: translateX(-100%);
+		-ms-transform: translateX(-100%);
+		-o-transform: translateX(-100%);
 		transform: translateX(-100%);
 	}
 	}
@@ -176,6 +188,9 @@
 @keyframes valo-animate-out-slide-down {
 		100% {
 		-webkit-transform: translateY(100%);
+		-moz-transform: translateY(100%);
+		-ms-transform: translateY(100%);
+		-o-transform: translateY(100%);
 		transform: translateY(100%);
 	}
 	}
@@ -195,6 +210,9 @@
 @keyframes valo-animate-out-slide-up {
 		100% {
 		-webkit-transform: translateY(-100%);
+		-moz-transform: translateY(-100%);
+		-ms-transform: translateY(-100%);
+		-o-transform: translateY(-100%);
 		transform: translateY(-100%);
 	}
 	}
@@ -214,6 +232,9 @@
 @keyframes valo-animate-out-slide-left {
 		100% {
 		-webkit-transform: translateX(-100%);
+		-moz-transform: translateX(-100%);
+		-ms-transform: translateX(-100%);
+		-o-transform: translateX(-100%);
 		transform: translateX(-100%);
 	}
 	}
@@ -233,6 +254,9 @@
 @keyframes valo-animate-out-slide-right {
 		100% {
 		-webkit-transform: translateX(100%);
+		-moz-transform: translateX(100%);
+		-ms-transform: translateX(100%);
+		-o-transform: translateX(100%);
 		transform: translateX(100%);
 	}
 	}
@@ -254,6 +278,9 @@
 @keyframes valo-overlay-animate-in {
 		0% {
 		-webkit-transform: translatey(-4px);
+		-moz-transform: translatey(-4px);
+		-ms-transform: translatey(-4px);
+		-o-transform: translatey(-4px);
 		transform: translatey(-4px);
 		opacity: 0;
 	}
@@ -277,6 +304,9 @@
 		100% {
 		opacity: 0;
 		-webkit-transform: translatey(30%);
+		-moz-transform: translatey(30%);
+		-ms-transform: translatey(30%);
+		-o-transform: translatey(30%);
 		transform: translatey(30%);
 	}
 	}
@@ -831,6 +861,9 @@
 @keyframes v-popupview-animate-in {
 		0% {
 		-webkit-transform: scale(0);
+		-moz-transform: scale(0);
+		-ms-transform: scale(0);
+		-o-transform: scale(0);
 		transform: scale(0);
 	}
 	}
@@ -965,6 +998,9 @@
 @keyframes valo-animate-out-scale-down-fade {
 		100% {
 		-webkit-transform: scale(0.8);
+		-moz-transform: scale(0.8);
+		-ms-transform: scale(0.8);
+		-o-transform: scale(0.8);
 		transform: scale(0.8);
 		opacity: 0;
 	}
@@ -975,7 +1011,7 @@
  */
 
 .v-vaadin-version:after {
-	content: "7.4.4";
+	content: "7.5.6";
 }
 
 .v-widget {
@@ -1533,7 +1569,30 @@ div.v-layout.v-horizontal.v-widget {
 	vertical-align: top;
 }
 
-.addondemo .fa, .addondemo .FontAwesomeLabelAddon {
+.addondemo {
+	@-webkit-keyframes fa-spin {
+		0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+		100% {
+		-webkit-transform: rotate(359deg);
+		transform: rotate(359deg);
+	}
+	}
+	@keyframes fa-spin {
+		0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+		100% {
+		-webkit-transform: rotate(359deg);
+		transform: rotate(359deg);
+	}
+	}
+}
+
+.addondemo .fa, .addondemo .FontAwesomeLabelAddon, .addondemo .FontAwesomeIconAddon {
 	display: inline-block;
 	font: normal normal normal 14px/1 FontAwesomeLabelAddon;
 	font-size: inherit;
@@ -1603,19 +1662,19 @@ div.v-layout.v-horizontal.v-widget {
 	border-radius: 0.1em;
 }
 
-.addondemo .pull-right {
-	float: right;
-}
-
-.addondemo .pull-left {
+.addondemo .fa-pull-left {
 	float: left;
 }
 
-.addondemo .fa.pull-left {
+.addondemo .fa-pull-right {
+	float: right;
+}
+
+.addondemo .fa.fa-pull-left {
 	margin-right: 0.3em;
 }
 
-.addondemo .fa.pull-right {
+.addondemo .fa.fa-pull-right {
 	margin-left: 0.3em;
 }
 
@@ -2292,7 +2351,7 @@ div.v-layout.v-horizontal.v-widget {
 	content: "\f09d";
 }
 
-.addondemo .fa-rss:before {
+.addondemo .fa-feed:before, .addondemo .fa-rss:before {
 	content: "\f09e";
 }
 
@@ -3396,7 +3455,7 @@ div.v-layout.v-horizontal.v-widget {
 	content: "\f1d3";
 }
 
-.addondemo .fa-hacker-news:before {
+.addondemo .fa-y-combinator-square:before, .addondemo .fa-yc-square:before, .addondemo .fa-hacker-news:before {
 	content: "\f1d4";
 }
 
@@ -3424,7 +3483,7 @@ div.v-layout.v-horizontal.v-widget {
 	content: "\f1da";
 }
 
-.addondemo .fa-genderless:before, .addondemo .fa-circle-thin:before {
+.addondemo .fa-circle-thin:before {
 	content: "\f1db";
 }
 
@@ -3692,7 +3751,7 @@ div.v-layout.v-horizontal.v-widget {
 	content: "\f223";
 }
 
-.addondemo .fa-transgender:before {
+.addondemo .fa-intersex:before, .addondemo .fa-transgender:before {
 	content: "\f224";
 }
 
@@ -3726,6 +3785,10 @@ div.v-layout.v-horizontal.v-widget {
 
 .addondemo .fa-neuter:before {
 	content: "\f22c";
+}
+
+.addondemo .fa-genderless:before {
+	content: "\f22d";
 }
 
 .addondemo .fa-facebook-official:before {
@@ -3770,6 +3833,346 @@ div.v-layout.v-horizontal.v-widget {
 
 .addondemo .fa-medium:before {
 	content: "\f23a";
+}
+
+.addondemo .fa-yc:before, .addondemo .fa-y-combinator:before {
+	content: "\f23b";
+}
+
+.addondemo .fa-optin-monster:before {
+	content: "\f23c";
+}
+
+.addondemo .fa-opencart:before {
+	content: "\f23d";
+}
+
+.addondemo .fa-expeditedssl:before {
+	content: "\f23e";
+}
+
+.addondemo .fa-battery-4:before, .addondemo .fa-battery-full:before {
+	content: "\f240";
+}
+
+.addondemo .fa-battery-3:before, .addondemo .fa-battery-three-quarters:before {
+	content: "\f241";
+}
+
+.addondemo .fa-battery-2:before, .addondemo .fa-battery-half:before {
+	content: "\f242";
+}
+
+.addondemo .fa-battery-1:before, .addondemo .fa-battery-quarter:before {
+	content: "\f243";
+}
+
+.addondemo .fa-battery-0:before, .addondemo .fa-battery-empty:before {
+	content: "\f244";
+}
+
+.addondemo .fa-mouse-pointer:before {
+	content: "\f245";
+}
+
+.addondemo .fa-i-cursor:before {
+	content: "\f246";
+}
+
+.addondemo .fa-object-group:before {
+	content: "\f247";
+}
+
+.addondemo .fa-object-ungroup:before {
+	content: "\f248";
+}
+
+.addondemo .fa-sticky-note:before {
+	content: "\f249";
+}
+
+.addondemo .fa-sticky-note-o:before {
+	content: "\f24a";
+}
+
+.addondemo .fa-cc-jcb:before {
+	content: "\f24b";
+}
+
+.addondemo .fa-cc-diners-club:before {
+	content: "\f24c";
+}
+
+.addondemo .fa-clone:before {
+	content: "\f24d";
+}
+
+.addondemo .fa-balance-scale:before {
+	content: "\f24e";
+}
+
+.addondemo .fa-hourglass-o:before {
+	content: "\f250";
+}
+
+.addondemo .fa-hourglass-1:before, .addondemo .fa-hourglass-start:before {
+	content: "\f251";
+}
+
+.addondemo .fa-hourglass-2:before, .addondemo .fa-hourglass-half:before {
+	content: "\f252";
+}
+
+.addondemo .fa-hourglass-3:before, .addondemo .fa-hourglass-end:before {
+	content: "\f253";
+}
+
+.addondemo .fa-hourglass:before {
+	content: "\f254";
+}
+
+.addondemo .fa-hand-grab-o:before, .addondemo .fa-hand-rock-o:before {
+	content: "\f255";
+}
+
+.addondemo .fa-hand-stop-o:before, .addondemo .fa-hand-paper-o:before {
+	content: "\f256";
+}
+
+.addondemo .fa-hand-scissors-o:before {
+	content: "\f257";
+}
+
+.addondemo .fa-hand-lizard-o:before {
+	content: "\f258";
+}
+
+.addondemo .fa-hand-spock-o:before {
+	content: "\f259";
+}
+
+.addondemo .fa-hand-pointer-o:before {
+	content: "\f25a";
+}
+
+.addondemo .fa-hand-peace-o:before {
+	content: "\f25b";
+}
+
+.addondemo .fa-trademark:before {
+	content: "\f25c";
+}
+
+.addondemo .fa-registered:before {
+	content: "\f25d";
+}
+
+.addondemo .fa-creative-commons:before {
+	content: "\f25e";
+}
+
+.addondemo .fa-gg:before {
+	content: "\f260";
+}
+
+.addondemo .fa-gg-circle:before {
+	content: "\f261";
+}
+
+.addondemo .fa-tripadvisor:before {
+	content: "\f262";
+}
+
+.addondemo .fa-odnoklassniki:before {
+	content: "\f263";
+}
+
+.addondemo .fa-odnoklassniki-square:before {
+	content: "\f264";
+}
+
+.addondemo .fa-get-pocket:before {
+	content: "\f265";
+}
+
+.addondemo .fa-wikipedia-w:before {
+	content: "\f266";
+}
+
+.addondemo .fa-safari:before {
+	content: "\f267";
+}
+
+.addondemo .fa-chrome:before {
+	content: "\f268";
+}
+
+.addondemo .fa-firefox:before {
+	content: "\f269";
+}
+
+.addondemo .fa-opera:before {
+	content: "\f26a";
+}
+
+.addondemo .fa-internet-explorer:before {
+	content: "\f26b";
+}
+
+.addondemo .fa-tv:before, .addondemo .fa-television:before {
+	content: "\f26c";
+}
+
+.addondemo .fa-contao:before {
+	content: "\f26d";
+}
+
+.addondemo .fa-500px:before {
+	content: "\f26e";
+}
+
+.addondemo .fa-amazon:before {
+	content: "\f270";
+}
+
+.addondemo .fa-calendar-plus-o:before {
+	content: "\f271";
+}
+
+.addondemo .fa-calendar-minus-o:before {
+	content: "\f272";
+}
+
+.addondemo .fa-calendar-times-o:before {
+	content: "\f273";
+}
+
+.addondemo .fa-calendar-check-o:before {
+	content: "\f274";
+}
+
+.addondemo .fa-industry:before {
+	content: "\f275";
+}
+
+.addondemo .fa-map-pin:before {
+	content: "\f276";
+}
+
+.addondemo .fa-map-signs:before {
+	content: "\f277";
+}
+
+.addondemo .fa-map-o:before {
+	content: "\f278";
+}
+
+.addondemo .fa-map:before {
+	content: "\f279";
+}
+
+.addondemo .fa-commenting:before {
+	content: "\f27a";
+}
+
+.addondemo .fa-commenting-o:before {
+	content: "\f27b";
+}
+
+.addondemo .fa-houzz:before {
+	content: "\f27c";
+}
+
+.addondemo .fa-vimeo:before {
+	content: "\f27d";
+}
+
+.addondemo .fa-black-tie:before {
+	content: "\f27e";
+}
+
+.addondemo .fa-fonticons:before {
+	content: "\f280";
+}
+
+.addondemo .fa-reddit-alien:before {
+	content: "\f281";
+}
+
+.addondemo .fa-edge:before {
+	content: "\f282";
+}
+
+.addondemo .fa-credit-card-alt:before {
+	content: "\f283";
+}
+
+.addondemo .fa-codiepie:before {
+	content: "\f284";
+}
+
+.addondemo .fa-modx:before {
+	content: "\f285";
+}
+
+.addondemo .fa-fort-awesome:before {
+	content: "\f286";
+}
+
+.addondemo .fa-usb:before {
+	content: "\f287";
+}
+
+.addondemo .fa-product-hunt:before {
+	content: "\f288";
+}
+
+.addondemo .fa-mixcloud:before {
+	content: "\f289";
+}
+
+.addondemo .fa-scribd:before {
+	content: "\f28a";
+}
+
+.addondemo .fa-pause-circle:before {
+	content: "\f28b";
+}
+
+.addondemo .fa-pause-circle-o:before {
+	content: "\f28c";
+}
+
+.addondemo .fa-stop-circle:before {
+	content: "\f28d";
+}
+
+.addondemo .fa-stop-circle-o:before {
+	content: "\f28e";
+}
+
+.addondemo .fa-shopping-bag:before {
+	content: "\f290";
+}
+
+.addondemo .fa-shopping-basket:before {
+	content: "\f291";
+}
+
+.addondemo .fa-hashtag:before {
+	content: "\f292";
+}
+
+.addondemo .fa-bluetooth:before {
+	content: "\f293";
+}
+
+.addondemo .fa-bluetooth-b:before {
+	content: "\f294";
+}
+
+.addondemo .fa-percent:before {
+	content: "\f295";
 }
 
 .addondemo.v-app, .addondemo.v-app-loading {
@@ -4772,6 +5175,23 @@ div.v-layout.v-horizontal.v-widget {
 	background: transparent;
 }
 
+.addondemo .v-checkbox.v-readonly  > label, .addondemo .v-checkbox.v-readonly  > .v-icon {
+	cursor: default;
+}
+
+.addondemo .v-checkbox.v-readonly  > label > .v-icon {
+	cursor: default;
+}
+
+:root .addondemo .v-checkbox.v-readonly > input:active ~ label:after {
+	background: transparent;
+}
+
+:root .addondemo .v-checkbox.v-readonly > input ~ label:after {
+	opacity: 0.5;
+	filter: alpha(opacity=50) ;
+}
+
 .addondemo .v-checkbox-small {
 	position: relative;
 	line-height: 16px;
@@ -4885,6 +5305,23 @@ div.v-layout.v-horizontal.v-widget {
 	background: transparent;
 }
 
+.addondemo .v-checkbox-small.v-readonly  > label, .addondemo .v-checkbox-small.v-readonly  > .v-icon {
+	cursor: default;
+}
+
+.addondemo .v-checkbox-small.v-readonly  > label > .v-icon {
+	cursor: default;
+}
+
+:root .addondemo .v-checkbox-small.v-readonly > input:active ~ label:after {
+	background: transparent;
+}
+
+:root .addondemo .v-checkbox-small.v-readonly > input ~ label:after {
+	opacity: 0.5;
+	filter: alpha(opacity=50) ;
+}
+
 .addondemo .v-checkbox-large {
 	position: relative;
 	line-height: 22px;
@@ -4996,6 +5433,23 @@ div.v-layout.v-horizontal.v-widget {
 
 :root .addondemo .v-checkbox-large.v-disabled > input:active ~ label:after {
 	background: transparent;
+}
+
+.addondemo .v-checkbox-large.v-readonly  > label, .addondemo .v-checkbox-large.v-readonly  > .v-icon {
+	cursor: default;
+}
+
+.addondemo .v-checkbox-large.v-readonly  > label > .v-icon {
+	cursor: default;
+}
+
+:root .addondemo .v-checkbox-large.v-readonly > input:active ~ label:after {
+	background: transparent;
+}
+
+:root .addondemo .v-checkbox-large.v-readonly > input ~ label:after {
+	opacity: 0.5;
+	filter: alpha(opacity=50) ;
 }
 
 .addondemo .v-filterselect {
@@ -6403,6 +6857,24 @@ div.v-layout.v-horizontal.v-widget {
 	z-index: 1;
 }
 
+.addondemo .v-grid-spacer {
+	position: absolute;
+	display: block;
+	background-color: white;
+}
+
+.addondemo .v-grid-spacer  > td {
+	width: 100%;
+	height: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.v-ie8 .addondemo .v-grid-spacer, .v-ie9 .addondemo .v-grid-spacer {
+	margin-top: 0;
+}
+
 .addondemo .v-grid {
 	outline: none;
 }
@@ -6421,6 +6893,102 @@ div.v-layout.v-horizontal.v-widget {
 
 .addondemo .v-grid-tablewrapper {
 	border: 1px solid #d4d4d4;
+}
+
+.addondemo .v-grid .header-drag-table {
+	border-spacing: 0;
+	position: relative;
+	table-layout: fixed;
+	width: inherit;
+}
+
+.addondemo .v-grid .header-drag-table .v-grid-header {
+	position: absolute;
+}
+
+.addondemo .v-grid .header-drag-table .v-grid-header  > .v-grid-cell {
+	border: 1px solid #d4d4d4;
+	margin-top: -10px;
+	opacity: 0.9;
+	filter: alpha(opacity=90);
+	z-index: 30000;
+}
+
+.addondemo .v-grid .header-drag-table .v-grid-header  > .v-grid-drop-marker {
+	background-color: #197de1;
+	position: absolute;
+	width: 3px;
+}
+
+.addondemo .v-grid-sidebar.v-contextmenu {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	border-radius: 0;
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-color: #fafafa;
+	border: 1px solid #d4d4d4;
+	padding: 0;
+	z-index: 5;
+}
+
+.addondemo .v-grid-sidebar.v-contextmenu .v-grid-sidebar-button {
+	background: transparent;
+	border: none;
+	color: inherit;
+	cursor: pointer;
+	outline: none;
+	padding: 0 4px;
+	text-align: right;
+	line-height: 1;
+}
+
+.addondemo .v-grid-sidebar.v-contextmenu .v-grid-sidebar-button[disabled] {
+	cursor: default;
+}
+
+.addondemo .v-grid-sidebar.v-contextmenu .v-grid-sidebar-button::-moz-focus-inner {
+	border: 0;
+}
+
+.addondemo .v-grid-sidebar.v-contextmenu .v-grid-sidebar-button:after {
+	content: "\f0c9";
+	display: block;
+	font-family: FontAwesome, sans-serif;
+	font-size: 14px;
+}
+
+.addondemo .v-grid-sidebar.v-contextmenu.closed {
+	border-radius: 0;
+}
+
+.addondemo .v-grid-sidebar.v-contextmenu.open .v-grid-sidebar-button {
+	width: 100%;
+}
+
+.addondemo .v-grid-sidebar.v-contextmenu.open .v-grid-sidebar-button:after {
+	content: "\f0c9";
+	font-size: 14px;
+	line-height: 1;
+}
+
+.v-ie .addondemo .v-grid-sidebar.v-contextmenu.open .v-grid-sidebar-button {
+	vertical-align: middle;
+}
+
+.v-ie8 .addondemo .v-grid-sidebar.v-contextmenu.open .v-grid-sidebar-button:after {
+	vertical-align: middle;
+	text-align: center;
+	display: inline;
+}
+
+.addondemo .v-grid-sidebar.v-contextmenu .v-grid-sidebar-content {
+	padding: 4px 0;
+}
+
+.addondemo .v-grid-sidebar.v-contextmenu .v-grid-sidebar-content .gwt-MenuBar .gwt-MenuItem .column-hiding-toggle {
+	text-shadow: none;
 }
 
 .addondemo .v-grid-cell {
@@ -6455,6 +7023,13 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .addondemo .v-grid-row > td:first-child, .addondemo .v-grid-editor-cells > div:first-child {
+	border-left: none;
+}
+
+.addondemo .v-grid-editor-cells.frozen > div {
+	-webkit-box-shadow: 1px 0 2px rgba(0, 0, 0, 0.1);
+	box-shadow: 1px 0 2px rgba(0, 0, 0, 0.1);
+	border-right: 1px solid #d4d4d4;
 	border-left: none;
 }
 
@@ -6568,6 +7143,8 @@ div.v-layout.v-horizontal.v-widget {
 	left: 0;
 	right: 0;
 	border: 1px solid #d4d4d4;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
 	margin-top: -1px;
 	-webkit-box-shadow: 0 0 9px rgba(0, 0, 0, 0.2);
 	box-shadow: 0 0 9px rgba(0, 0, 0, 0.2);
@@ -6576,6 +7153,10 @@ div.v-layout.v-horizontal.v-widget {
 .addondemo .v-grid-editor-cells {
 	position: relative;
 	white-space: nowrap;
+}
+
+.addondemo .v-grid-editor-cells.frozen {
+	z-index: 2;
 }
 
 .addondemo .v-grid-editor-cells  > div {
@@ -6601,6 +7182,14 @@ div.v-layout.v-horizontal.v-widget {
 	max-width: 100%;
 	min-height: 100%;
 	max-height: 100%;
+}
+
+.v-ie8 .addondemo .v-grid-editor-cells  > div .v-datefield-button {
+	margin-left: -30px;
+}
+
+.v-ie8 .addondemo .v-grid-editor-cells  > div .v-filterselect-button {
+	margin-left: -27px;
 }
 
 .addondemo .v-grid-editor-cells  > div .v-select, .addondemo .v-grid-editor-cells  > div .v-select-select {
@@ -6667,6 +7256,45 @@ div.v-layout.v-horizontal.v-widget {
 	margin-right: 4px;
 }
 
+.addondemo .v-grid-spacer {
+	padding-left: 1px;
+}
+
+.addondemo .v-grid-spacer > td {
+	display: block;
+	padding: 0;
+	background-color: white;
+	border-top: 1px solid #eeeeee;
+	border-bottom: 1px solid #d4d4d4;
+}
+
+.addondemo .v-grid-spacer.stripe > td {
+	background-color: #f5f5f5;
+	border-top: 1px solid #e5e5e5;
+	border-bottom: 1px solid #d4d4d4;
+}
+
+.addondemo .v-grid-spacer-deco-container {
+	border-top: 1px solid transparent;
+	position: relative;
+	top: 0;
+	z-index: 5;
+}
+
+.addondemo .v-grid-spacer-deco {
+	top: 0;
+	left: 0;
+	width: 2px;
+	background-color: #197de1;
+	position: absolute;
+	height: 100%;
+	pointer-events: none;
+}
+
+.ie8 .addondemo .v-grid-spacer-deco:before, .ie9 .addondemo .v-grid-spacer-deco:before, .ie10 .addondemo .v-grid-spacer-deco:before {
+	content: url(data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjwvc3ZnPg==);
+}
+
 .addondemo .v-grid-cell > .v-progressbar {
 	width: 100%;
 }
@@ -6684,6 +7312,18 @@ div.v-layout.v-horizontal.v-widget {
 	background-image: -webkit-linear-gradient(top, #fafafa 2%, #efefef 98%);
 	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.addondemo .v-grid-header .v-grid-cell.dragged {
+	opacity: 0.5;
+	filter: alpha(opacity=50) ;
+	-webkit-transition: opacity 0.3s ease-in-out;
+	-moz-transition: opacity 0.3s ease-in-out;
+	transition: opacity 0.3s ease-in-out;
+}
+
+.addondemo .v-grid-header .v-grid-cell.dragged-column-header {
+	margin-top: -19px;
 }
 
 .addondemo .v-grid-footer .v-grid-cell {
@@ -6767,6 +7407,14 @@ div.v-layout.v-horizontal.v-widget {
 	box-shadow: inset 0 1px 0 #f2f2f2;
 }
 
+.v-ie8 .addondemo .v-grid-editor-cells > div .v-datefield-button {
+	margin-left: 0px;
+}
+
+.v-ie8 .addondemo .v-grid-editor-cells > div .v-filterselect-button {
+	margin-left: 0px;
+}
+
 .addondemo .v-grid-editor-cells > div .v-textfield-focus, .addondemo .v-grid-editor-cells > div .v-datefield .v-textfield-focus, .addondemo .v-grid-editor-cells > div .v-filterselect-input:focus {
 	position: relative;
 }
@@ -6817,6 +7465,21 @@ div.v-layout.v-horizontal.v-widget {
 .addondemo .v-grid-editor-save.v-disabled, .addondemo .v-grid-editor-cancel.v-disabled {
 	opacity: 0.5;
 	filter: alpha(opacity=50) ;
+}
+
+.addondemo .v-grid-spacer {
+	margin-top: -1px;
+}
+
+.addondemo .v-grid-sidebar.v-contextmenu.open .v-grid-sidebar-content {
+	margin: 0 0 2px;
+	padding: 4px 4px 2px;
+}
+
+.addondemo .v-grid-sidebar.v-contextmenu.closed {
+	background-color: #fafafa;
+	background-image: -webkit-linear-gradient(top, #fafafa 2%, #efefef 98%);
+	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
 }
 
 .addondemo .v-grid-scroller::-webkit-scrollbar {
@@ -9463,6 +10126,23 @@ div.v-layout.v-horizontal.v-widget {
 	background: transparent;
 }
 
+.addondemo .v-radiobutton.v-readonly  > label, .addondemo .v-radiobutton.v-readonly  > .v-icon {
+	cursor: default;
+}
+
+.addondemo .v-radiobutton.v-readonly  > label > .v-icon {
+	cursor: default;
+}
+
+:root .addondemo .v-radiobutton.v-readonly > input:active ~ label:after {
+	background: transparent;
+}
+
+:root .addondemo .v-radiobutton.v-readonly > input ~ label:after {
+	opacity: 0.5;
+	filter: alpha(opacity=50) ;
+}
+
 :root .addondemo .v-radiobutton > input:checked ~ label:after {
 	width: 7px;
 	height: 7px;
@@ -9609,6 +10289,23 @@ div.v-layout.v-horizontal.v-widget {
 	background: transparent;
 }
 
+.addondemo .v-select-optiongroup-small .v-checkbox.v-readonly  > label, .addondemo .v-select-optiongroup-small .v-checkbox.v-readonly  > .v-icon {
+	cursor: default;
+}
+
+.addondemo .v-select-optiongroup-small .v-checkbox.v-readonly  > label > .v-icon {
+	cursor: default;
+}
+
+:root .addondemo .v-select-optiongroup-small .v-checkbox.v-readonly > input:active ~ label:after {
+	background: transparent;
+}
+
+:root .addondemo .v-select-optiongroup-small .v-checkbox.v-readonly > input ~ label:after {
+	opacity: 0.5;
+	filter: alpha(opacity=50) ;
+}
+
 .addondemo .v-select-optiongroup-small .v-radiobutton {
 	position: relative;
 	line-height: 16px;
@@ -9719,6 +10416,23 @@ div.v-layout.v-horizontal.v-widget {
 
 :root .addondemo .v-select-optiongroup-small .v-radiobutton.v-disabled > input:active ~ label:after {
 	background: transparent;
+}
+
+.addondemo .v-select-optiongroup-small .v-radiobutton.v-readonly  > label, .addondemo .v-select-optiongroup-small .v-radiobutton.v-readonly  > .v-icon {
+	cursor: default;
+}
+
+.addondemo .v-select-optiongroup-small .v-radiobutton.v-readonly  > label > .v-icon {
+	cursor: default;
+}
+
+:root .addondemo .v-select-optiongroup-small .v-radiobutton.v-readonly > input:active ~ label:after {
+	background: transparent;
+}
+
+:root .addondemo .v-select-optiongroup-small .v-radiobutton.v-readonly > input ~ label:after {
+	opacity: 0.5;
+	filter: alpha(opacity=50) ;
 }
 
 :root .addondemo .v-select-optiongroup-small .v-radiobutton > input:checked ~ label:after {
@@ -9867,6 +10581,23 @@ div.v-layout.v-horizontal.v-widget {
 	background: transparent;
 }
 
+.addondemo .v-select-optiongroup-large .v-checkbox.v-readonly  > label, .addondemo .v-select-optiongroup-large .v-checkbox.v-readonly  > .v-icon {
+	cursor: default;
+}
+
+.addondemo .v-select-optiongroup-large .v-checkbox.v-readonly  > label > .v-icon {
+	cursor: default;
+}
+
+:root .addondemo .v-select-optiongroup-large .v-checkbox.v-readonly > input:active ~ label:after {
+	background: transparent;
+}
+
+:root .addondemo .v-select-optiongroup-large .v-checkbox.v-readonly > input ~ label:after {
+	opacity: 0.5;
+	filter: alpha(opacity=50) ;
+}
+
 .addondemo .v-select-optiongroup-large .v-radiobutton {
 	position: relative;
 	line-height: 22px;
@@ -9977,6 +10708,23 @@ div.v-layout.v-horizontal.v-widget {
 
 :root .addondemo .v-select-optiongroup-large .v-radiobutton.v-disabled > input:active ~ label:after {
 	background: transparent;
+}
+
+.addondemo .v-select-optiongroup-large .v-radiobutton.v-readonly  > label, .addondemo .v-select-optiongroup-large .v-radiobutton.v-readonly  > .v-icon {
+	cursor: default;
+}
+
+.addondemo .v-select-optiongroup-large .v-radiobutton.v-readonly  > label > .v-icon {
+	cursor: default;
+}
+
+:root .addondemo .v-select-optiongroup-large .v-radiobutton.v-readonly > input:active ~ label:after {
+	background: transparent;
+}
+
+:root .addondemo .v-select-optiongroup-large .v-radiobutton.v-readonly > input ~ label:after {
+	opacity: 0.5;
+	filter: alpha(opacity=50) ;
 }
 
 :root .addondemo .v-select-optiongroup-large .v-radiobutton > input:checked ~ label:after {
@@ -10117,9 +10865,9 @@ div.v-layout.v-horizontal.v-widget {
 	background-image: radial-gradient(  circle at 50% 50%, #222, #0e0e0e);
 	opacity: 0.72;
 	filter: alpha(opacity=72) ;
-	-webkit-animation: valo-animate-in-fade 400ms 100ms;
-	-moz-animation: valo-animate-in-fade 400ms 100ms;
-	animation: valo-animate-in-fade 400ms 100ms;
+	-webkit-animation: valo-animate-in-fade 400ms 100ms backwards;
+	-moz-animation: valo-animate-in-fade 400ms 100ms backwards;
+	animation: valo-animate-in-fade 400ms 100ms backwards;
 }
 
 .v-op12 .addondemo .v-window-modalitycurtain {
@@ -10630,6 +11378,7 @@ div.v-layout.v-horizontal.v-widget {
 	position: relative;
 	background: #fafafa;
 	color: #464646;
+	overflow: hidden;
 }
 
 .addondemo .v-table-header table, .addondemo .v-table-footer table, .addondemo .v-table-table {
@@ -10767,10 +11516,16 @@ div.v-layout.v-horizontal.v-widget {
 
 .addondemo .v-table-row {
 	background-color: white;
+	cursor: pointer;
 }
 
 .addondemo .v-table-row-odd {
 	background-color: #f5f5f5;
+	cursor: pointer;
+}
+
+.addondemo .v-table-body-noselection .v-table-row, .addondemo .v-table-body-noselection .v-table-row-odd {
+	cursor: default;
 }
 
 .addondemo .v-table [class*="-row"].v-selected {
@@ -10848,7 +11603,7 @@ div.v-layout.v-horizontal.v-widget {
 .addondemo .v-table-focus-slot-right {
 	border-right: 3px solid #197de1;
 	right: -2px;
-	margin-left: -11px;
+	margin-left: -11px !important;
 }
 
 .addondemo .v-table-focus-slot-left {
@@ -10874,25 +11629,27 @@ div.v-layout.v-horizontal.v-widget {
 	background-color: #fafafa;
 	background-image: -webkit-linear-gradient(top, #fafafa 2%, #efefef 98%);
 	background-image: linear-gradient(to bottom,#fafafa 2%, #efefef 98%);
-	-webkit-box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
+	-webkit-box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7;
+	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7;
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
 	position: absolute;
 	z-index: 2;
-	top: -9px;
-	right: -9px;
+	top: 0;
+	right: 0;
+	width: 19px;
 	height: 19px;
 	line-height: 19px;
-	width: 19px;
 	padding: 0;
-	border-radius: 50%;
+	border-top-width: 0;
+	border-right-width: 0;
+	border-radius: 0 0 0 4px;
 	cursor: pointer;
 	text-align: center;
 	opacity: 0;
 	filter: alpha(opacity=0) ;
-	-webkit-transition: opacity 200ms 1s;
-	-moz-transition: opacity 200ms 1s;
-	transition: opacity 200ms 1s;
+	-webkit-transition: opacity 200ms 2s;
+	-moz-transition: opacity 200ms 2s;
+	transition: opacity 200ms 2s;
 }
 
 .addondemo .v-table-column-selector:after {
@@ -10920,11 +11677,11 @@ div.v-layout.v-horizontal.v-widget {
 .addondemo .v-table-column-selector:after {
 	content: "";
 	position: absolute;
-	top: -1px;
-	right: -1px;
-	bottom: -1px;
-	left: -1px;
-	border-radius: inherit;
+	border: none;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
 }
 
 .addondemo .v-table-column-selector:active:after {
@@ -10936,25 +11693,12 @@ div.v-layout.v-horizontal.v-widget {
 	content: "\f013";
 }
 
-.addondemo .v-scrollable > .v-table .v-table-column-selector {
-	right: 0;
-	top: 0;
-	border-top: none;
-	border-right: none;
-	border-radius: 0 0 0 50%;
-}
-
-.addondemo .v-scrollable > .v-table .v-table-column-selector:after {
-	top: 0;
-	right: 0;
-}
-
 .addondemo .v-table-header-wrap:hover .v-table-column-selector {
 	opacity: 1;
 	filter: none ;
-	-webkit-transition-delay: 100ms;
-	-moz-transition-delay: 100ms;
-	transition-delay: 100ms;
+	-webkit-transition-delay: 200ms;
+	-moz-transition-delay: 200ms;
+	transition-delay: 200ms;
 }
 
 .addondemo .v-on:before, .addondemo .v-off:before {
@@ -11008,6 +11752,10 @@ div.v-layout.v-horizontal.v-widget {
 	line-height: 37px;
 	margin: -19px 0 0 !important;
 	text-align: center;
+}
+
+.addondemo .v-table-drag {
+	overflow: visible;
 }
 
 .addondemo .v-table-drag .v-table-body {
@@ -12022,9 +12770,9 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .addondemo .v-tabsheet-tabsheetpanel > .v-scrollable > .v-widget {
-	-webkit-animation: valo-animate-in-fade 300ms;
-	-moz-animation: valo-animate-in-fade 300ms;
-	animation: valo-animate-in-fade 300ms;
+	-webkit-animation: valo-animate-in-fade 300ms backwards;
+	-moz-animation: valo-animate-in-fade 300ms backwards;
+	animation: valo-animate-in-fade 300ms backwards;
 }
 
 .addondemo .v-tabsheet-deco {
@@ -13202,6 +13950,10 @@ div.v-layout.v-horizontal.v-widget {
 	margin-top: 16px;
 }
 
+.addondemo .v-verticallayout > .v-slot:first-child .v-formlayout-contentcell h1, .addondemo .v-verticallayout > .v-slot:first-child .v-formlayout-contentcell .v-label-h1, .addondemo .v-verticallayout > .v-slot:first-child .v-formlayout-contentcell h2, .addondemo .v-verticallayout > .v-slot:first-child .v-formlayout-contentcell .v-label-h2, .addondemo .v-verticallayout > .v-slot:first-child .v-formlayout-contentcell h3, .addondemo .v-verticallayout > .v-slot:first-child .v-formlayout-contentcell .v-label-h3, .addondemo .v-verticallayout > .v-slot:first-child .v-formlayout-contentcell h4, .addondemo .v-verticallayout > .v-slot:first-child .v-formlayout-contentcell .v-label-h4, .addondemo .v-verticallayout > div > .v-slot:first-child .v-formlayout-contentcell h1, .addondemo .v-verticallayout > div > .v-slot:first-child .v-formlayout-contentcell .v-label-h1, .addondemo .v-verticallayout > div > .v-slot:first-child .v-formlayout-contentcell h2, .addondemo .v-verticallayout > div > .v-slot:first-child .v-formlayout-contentcell .v-label-h2, .addondemo .v-verticallayout > div > .v-slot:first-child .v-formlayout-contentcell h3, .addondemo .v-verticallayout > div > .v-slot:first-child .v-formlayout-contentcell .v-label-h3, .addondemo .v-verticallayout > div > .v-slot:first-child .v-formlayout-contentcell h4, .addondemo .v-verticallayout > div > .v-slot:first-child .v-formlayout-contentcell .v-label-h4 {
+	margin-top: -0.5em;
+}
+
 .addondemo h1.no-margin, .addondemo .v-label-h1.no-margin, .addondemo h2.no-margin, .addondemo .v-label-h2.no-margin, .addondemo h3.no-margin, .addondemo .v-label-h3.no-margin, .addondemo h4.no-margin, .addondemo .v-label-h4.no-margin {
 	margin: 0 !important;
 }
@@ -13775,7 +14527,17 @@ div.v-layout.v-horizontal.v-widget {
 	padding: 19px 22px;
 }
 
-.addondemo .v-Notification h1 {
+.addondemo .v-Notification .v-Notification-caption {
+	color: #197de1;
+	font-size: 19px;
+	line-height: 1;
+}
+
+.addondemo .v-Notification .v-Notification-description {
+	line-height: 1.4;
+}
+
+.addondemo .v-Notification-caption {
 	margin: 0;
 	display: inline-block;
 	text-align: left;
@@ -13785,7 +14547,7 @@ div.v-layout.v-horizontal.v-widget {
 	letter-spacing: 0;
 }
 
-.addondemo .v-Notification p {
+.addondemo .v-Notification-description, .addondemo .v-Notification-details {
 	margin: 0;
 	display: inline-block;
 	vertical-align: middle;
@@ -13795,22 +14557,12 @@ div.v-layout.v-horizontal.v-widget {
 	overflow: auto;
 }
 
-.addondemo .v-Notification h1 ~ p {
+.addondemo .v-Notification-caption ~ .v-Notification-description, .addondemo .v-Notification-caption ~ .v-Notification-details {
 	margin-left: 24px;
 }
 
-.addondemo .v-Notification .v-icon + h1 {
+.addondemo .v-icon + .v-Notification-caption {
 	margin-left: 16px;
-}
-
-.addondemo .v-Notification h1 {
-	color: #197de1;
-	font-size: 19px;
-	line-height: 1;
-}
-
-.addondemo .v-Notification p {
-	line-height: 1.4;
 }
 
 .addondemo .v-Notification-system {
@@ -13828,7 +14580,7 @@ div.v-layout.v-horizontal.v-widget {
 	line-height: 22px;
 }
 
-.addondemo .v-Notification-system p {
+.addondemo .v-Notification-system .v-Notification-description, .addondemo .v-Notification-system .v-Notification-details {
 	max-width: 50em;
 }
 
@@ -13864,12 +14616,12 @@ div.v-layout.v-horizontal.v-widget {
 	animation: valo-animate-out-slide-down 200ms;
 }
 
-.addondemo .v-Notification-system h1 {
+.addondemo .v-Notification-system .v-Notification-caption {
 	color: #fff;
 	vertical-align: middle;
 }
 
-.addondemo .v-Notification-system p {
+.addondemo .v-Notification-system .v-Notification-description, .addondemo .v-Notification-system .v-Notification-details {
 	color: #e6e6e6;
 }
 
@@ -13881,7 +14633,7 @@ div.v-layout.v-horizontal.v-widget {
 	text-align: left;
 }
 
-.addondemo .v-Notification.tray h1 + p {
+.addondemo .v-Notification.tray .v-Notification-caption + .v-Notification-description {
 	display: block;
 	margin: 0.5em 0 0;
 }
@@ -13890,11 +14642,11 @@ div.v-layout.v-horizontal.v-widget {
 	background: #FFF3D2;
 }
 
-.addondemo .v-Notification.warning h1 {
+.addondemo .v-Notification.warning .v-Notification-caption {
 	color: #AC7C00;
 }
 
-.addondemo .v-Notification.warning p {
+.addondemo .v-Notification.warning .v-Notification-description {
 	color: #9D874D;
 }
 
@@ -13905,11 +14657,11 @@ div.v-layout.v-horizontal.v-widget {
 	box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.25);
 }
 
-.addondemo .v-Notification.error h1 {
+.addondemo .v-Notification.error .v-Notification-caption {
 	color: white;
 }
 
-.addondemo .v-Notification.error p {
+.addondemo .v-Notification.error .v-Notification-description {
 	color: #f4e0df;
 }
 
@@ -13920,12 +14672,12 @@ div.v-layout.v-horizontal.v-widget {
 	line-height: 22px;
 }
 
-.addondemo .v-Notification.dark h1 {
+.addondemo .v-Notification.dark .v-Notification-caption {
 	color: #fff;
 	vertical-align: middle;
 }
 
-.addondemo .v-Notification.dark p {
+.addondemo .v-Notification.dark .v-Notification-description, .addondemo .v-Notification.dark .v-Notification-details {
 	color: #e6e6e6;
 }
 
@@ -13940,7 +14692,7 @@ div.v-layout.v-horizontal.v-widget {
 	padding: 12px 15px;
 }
 
-.addondemo .v-Notification.bar p {
+.addondemo .v-Notification.bar .v-Notification-description, .addondemo .v-Notification.bar .v-Notification-details {
 	max-width: 50em;
 }
 
@@ -13980,11 +14732,11 @@ div.v-layout.v-horizontal.v-widget {
 	padding: 11px 13px;
 }
 
-.addondemo .v-Notification.small h1 {
+.addondemo .v-Notification.small .v-Notification-caption {
 	font-size: 16px;
 }
 
-.addondemo .v-Notification.small p {
+.addondemo .v-Notification.small .v-Notification-description {
 	font-size: 14px;
 }
 
@@ -14054,12 +14806,12 @@ div.v-layout.v-horizontal.v-widget {
 	border: 2px solid #2c9720;
 }
 
-.addondemo .v-Notification.success h1, .addondemo .v-Notification.failure h1 {
+.addondemo .v-Notification.success .v-Notification-caption, .addondemo .v-Notification.failure .v-Notification-caption {
 	color: #2c9720;
 	font-weight: 400;
 }
 
-.addondemo .v-Notification.success h1:before, .addondemo .v-Notification.failure h1:before {
+.addondemo .v-Notification.success .v-Notification-caption:before, .addondemo .v-Notification.failure .v-Notification-caption:before {
 	font-family: FontAwesome;
 	content: "\f00c";
 	margin-right: 0.5em;
@@ -14073,11 +14825,11 @@ div.v-layout.v-horizontal.v-widget {
 	border-color: #ed473b;
 }
 
-.addondemo .v-Notification.failure h1 {
+.addondemo .v-Notification.failure .v-Notification-caption {
 	color: #ed473b;
 }
 
-.addondemo .v-Notification.failure h1:before {
+.addondemo .v-Notification.failure .v-Notification-caption:before {
 	content: "\f05e";
 }
 

@@ -346,6 +346,24 @@
  */
 
 @font-face {
+	font-family: ThemeIcons;
+	font-weight: normal;
+	font-style: normal;
+	src: url(../valo/util/bourbon/css3/../../../../base/fonts/themeicons-webfont.eot);
+	src: url(../valo/util/bourbon/css3/../../../../base/fonts/themeicons-webfont.eot?#iefix) format("embedded-opentype"), url(../valo/util/bourbon/css3/../../../../base/fonts/themeicons-webfont.woff) format("woff"), url(../valo/util/bourbon/css3/../../../../base/fonts/themeicons-webfont.ttf) format("truetype"), url(../valo/util/bourbon/css3/../../../../base/fonts/themeicons-webfont.svg#ThemeIcons) format("svg");
+}
+
+.ThemeIcons {
+	font-family: ThemeIcons;
+	font-style: normal;
+	font-weight: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	display: inline-block;
+	text-align: center;
+}
+
+@font-face {
 	font-family: FontAwesome;
 	font-weight: normal;
 	font-style: normal;
@@ -1011,7 +1029,7 @@
  */
 
 .v-vaadin-version:after {
-	content: "7.5.6";
+	content: "7.6.3";
 }
 
 .v-widget {
@@ -4496,6 +4514,60 @@ div.v-layout.v-horizontal.v-widget {
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
 }
 
+.addondemo .v-reconnect-dialog {
+	color: white;
+	top: 12px;
+	right: 12px;
+	max-width: 100%;
+	border-radius: 0;
+	-webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.25);
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.25);
+	padding: 12px 15px;
+	background-color: #444;
+	background-color: rgba(68, 68, 68, 0.9);
+	line-height: 22px;
+	text-align: center;
+}
+
+.addondemo .v-reconnect-dialog .text {
+	display: inline-block;
+	padding-left: 10px;
+}
+
+.addondemo .v-reconnect-dialog .spinner {
+	height: 24px !important;
+	width: 24px !important;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	border: 2px solid rgba(25, 125, 225, 0.2);
+	border-top-color: #197de1;
+	border-right-color: #197de1;
+	border-radius: 100%;
+	-webkit-animation: v-rotate-360 500ms infinite linear;
+	-moz-animation: v-rotate-360 500ms infinite linear;
+	animation: v-rotate-360 500ms infinite linear;
+	pointer-events: none;
+	display: none;
+	vertical-align: middle;
+}
+
+.v-ie8 .addondemo .v-reconnect-dialog .spinner, .v-ie9 .addondemo .v-reconnect-dialog .spinner {
+	border: none;
+	border-radius: 4px;
+	background: #fff url(../valo/shared/img/spinner.gif) no-repeat 50% 50%;
+	background-size: 80%;
+}
+
+.v-ie8 .addondemo .v-reconnect-dialog .spinner {
+	min-width: 30px;
+	min-height: 30px;
+}
+
+.addondemo .v-reconnect-dialog.active .spinner {
+	display: inline-block;
+}
+
 .addondemo .v-absolutelayout-wrapper {
 	position: absolute;
 }
@@ -5140,7 +5212,7 @@ div.v-layout.v-horizontal.v-widget {
 
 :root .addondemo .v-checkbox > input ~ label:after {
 	content: "\f00c";
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 	color: transparent;
 	-webkit-transition: color 100ms;
 	-moz-transition: color 100ms;
@@ -5270,7 +5342,7 @@ div.v-layout.v-horizontal.v-widget {
 
 :root .addondemo .v-checkbox-small > input ~ label:after {
 	content: "\f00c";
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 	color: transparent;
 	-webkit-transition: color 100ms;
 	-moz-transition: color 100ms;
@@ -5400,7 +5472,7 @@ div.v-layout.v-horizontal.v-widget {
 
 :root .addondemo .v-checkbox-large > input ~ label:after {
 	content: "\f00c";
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 	color: transparent;
 	-webkit-transition: color 100ms;
 	-moz-transition: color 100ms;
@@ -5491,7 +5563,7 @@ div.v-layout.v-horizontal.v-widget {
 	transition: box-shadow 180ms, border 180ms;
 	width: 100% !important;
 	height: 100%;
-	padding-right: 44px;
+	padding-right: 38px;
 	border-radius: inherit;
 }
 
@@ -5561,7 +5633,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .addondemo .v-filterselect [class$="button"]:before {
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 	content: "\f078";
 	-webkit-transition: color 140ms;
 	-moz-transition: color 140ms;
@@ -5754,7 +5826,7 @@ div.v-layout.v-horizontal.v-widget {
 	height: 25px;
 	line-height: 25px;
 	text-align: center;
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 	-webkit-transform: scale(0.8);
 	-moz-transform: scale(0.8);
 	-ms-transform: scale(0.8);
@@ -5946,7 +6018,7 @@ div.v-layout.v-horizontal.v-widget {
 	transition: box-shadow 180ms, border 180ms;
 	width: 100% !important;
 	height: 100%;
-	padding-right: 34px;
+	padding-right: 29px;
 	border-radius: inherit;
 }
 
@@ -5982,7 +6054,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .addondemo .v-filterselect-tiny [class$="button"]:before {
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 	content: "\f078";
 	-webkit-transition: color 140ms;
 	-moz-transition: color 140ms;
@@ -6073,7 +6145,7 @@ div.v-layout.v-horizontal.v-widget {
 	transition: box-shadow 180ms, border 180ms;
 	width: 100% !important;
 	height: 100%;
-	padding-right: 37px;
+	padding-right: 32px;
 	border-radius: inherit;
 }
 
@@ -6109,7 +6181,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .addondemo .v-filterselect-compact [class$="button"]:before, .addondemo .v-filterselect-small [class$="button"]:before {
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 	content: "\f078";
 	-webkit-transition: color 140ms;
 	-moz-transition: color 140ms;
@@ -6205,7 +6277,7 @@ div.v-layout.v-horizontal.v-widget {
 	transition: box-shadow 180ms, border 180ms;
 	width: 100% !important;
 	height: 100%;
-	padding-right: 53px;
+	padding-right: 45px;
 	border-radius: inherit;
 }
 
@@ -6241,7 +6313,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .addondemo .v-filterselect-large [class$="button"]:before {
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 	content: "\f078";
 	-webkit-transition: color 140ms;
 	-moz-transition: color 140ms;
@@ -6333,7 +6405,7 @@ div.v-layout.v-horizontal.v-widget {
 	transition: box-shadow 180ms, border 180ms;
 	width: 100% !important;
 	height: 100%;
-	padding-right: 71px;
+	padding-right: 60px;
 	border-radius: inherit;
 }
 
@@ -6369,7 +6441,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .addondemo .v-filterselect-huge [class$="button"]:before {
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 	content: "\f078";
 	-webkit-transition: color 140ms;
 	-moz-transition: color 140ms;
@@ -6933,6 +7005,10 @@ div.v-layout.v-horizontal.v-widget {
 	z-index: 5;
 }
 
+.addondemo .v-grid-sidebar.v-contextmenu.v-grid-sidebar-popup {
+	right: auto;
+}
+
 .addondemo .v-grid-sidebar.v-contextmenu .v-grid-sidebar-button {
 	background: transparent;
 	border: none;
@@ -6955,7 +7031,7 @@ div.v-layout.v-horizontal.v-widget {
 .addondemo .v-grid-sidebar.v-contextmenu .v-grid-sidebar-button:after {
 	content: "\f0c9";
 	display: block;
-	font-family: FontAwesome, sans-serif;
+	font-family: ThemeIcons, sans-serif;
 	font-size: 14px;
 }
 
@@ -6993,7 +7069,7 @@ div.v-layout.v-horizontal.v-widget {
 
 .addondemo .v-grid-cell {
 	background-color: white;
-	padding: 0 12px;
+	padding: 0 18px;
 	line-height: 37px;
 	text-overflow: ellipsis;
 }
@@ -7061,19 +7137,34 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .addondemo .v-grid-header .sort-asc, .addondemo .v-grid-header .sort-desc {
-	padding-right: 29px;
+	padding-right: 35px;
 }
 
 .addondemo .v-grid-header .sort-asc:after, .addondemo .v-grid-header .sort-desc:after {
-	font-family: FontAwesome, sans-serif;
+	font-family: ThemeIcons, sans-serif;
 	content: "\f0de" " " attr(sort-order);
 	position: absolute;
-	right: 12px;
+	right: 18px;
 	font-size: 12px;
 }
 
 .addondemo .v-grid-header .sort-desc:after {
 	content: "\f0dd" " " attr(sort-order);
+}
+
+.addondemo .v-grid-column-resize-handle {
+	position: absolute;
+	width: 36px;
+	right: -18px;
+	top: 0px;
+	bottom: 0px;
+	cursor: col-resize;
+	z-index: 10;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
 .addondemo .v-grid-footer td {
@@ -7088,6 +7179,18 @@ div.v-layout.v-horizontal.v-widget {
 
 .addondemo .v-grid-footer td:first-child {
 	border-left: none;
+}
+
+.addondemo .v-grid-header .v-grid-cell, .addondemo .v-grid-footer .v-grid-cell {
+	overflow: visible;
+}
+
+.addondemo .v-grid-column-header-content, .addondemo .v-grid-column-footer-content {
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	line-height: 37px;
+	vertical-align: baseline;
 }
 
 .addondemo .v-grid-header-deco {
@@ -7150,6 +7253,10 @@ div.v-layout.v-horizontal.v-widget {
 	box-shadow: 0 0 9px rgba(0, 0, 0, 0.2);
 }
 
+.addondemo .v-grid-editor.unbuffered .v-grid-editor-footer {
+	width: 100%;
+}
+
 .addondemo .v-grid-editor-cells {
 	position: relative;
 	white-space: nowrap;
@@ -7177,6 +7284,22 @@ div.v-layout.v-horizontal.v-widget {
 	display: inline-block;
 }
 
+.addondemo .v-grid-editor-cells  > div .v-filterselect {
+	padding-left: 0;
+}
+
+.addondemo .v-grid-editor-cells  > div input[type="text"], .addondemo .v-grid-editor-cells  > div input[type="text"].v-filterselect-input, .addondemo .v-grid-editor-cells  > div input[type="password"] {
+	padding-left: 18px;
+}
+
+.addondemo .v-grid-editor-cells  > div input[type="text"]:not(.v-filterselect-input), .addondemo .v-grid-editor-cells  > div input[type="password"] {
+	padding-right: 9px;
+}
+
+.addondemo .v-grid-editor-cells  > div input[type="checkbox"] {
+	margin-left: 18px;
+}
+
 .addondemo .v-grid-editor-cells  > div .v-textfield, .addondemo .v-grid-editor-cells  > div .v-datefield, .addondemo .v-grid-editor-cells  > div .v-filterselect {
 	min-width: 100%;
 	max-width: 100%;
@@ -7185,16 +7308,20 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .v-ie8 .addondemo .v-grid-editor-cells  > div .v-datefield-button {
-	margin-left: -30px;
+	margin-left: -37px;
 }
 
 .v-ie8 .addondemo .v-grid-editor-cells  > div .v-filterselect-button {
-	margin-left: -27px;
+	margin-left: -25px;
 }
 
 .addondemo .v-grid-editor-cells  > div .v-select, .addondemo .v-grid-editor-cells  > div .v-select-select {
 	min-width: 100%;
 	max-width: 100%;
+}
+
+.addondemo .v-grid-editor-cells  > div.not-editable.v-grid-cell {
+	float: none;
 }
 
 .addondemo .v-grid-editor-cells .error::before {
@@ -7307,6 +7434,11 @@ div.v-layout.v-horizontal.v-widget {
 	background-color: #fafafa;
 }
 
+.addondemo .v-grid.v-disabled {
+	opacity: 0.5;
+	filter: alpha(opacity=50) ;
+}
+
 .addondemo .v-grid-header .v-grid-cell {
 	background-color: #fafafa;
 	background-image: -webkit-linear-gradient(top, #fafafa 2%, #efefef 98%);
@@ -7390,6 +7522,10 @@ div.v-layout.v-horizontal.v-widget {
 	vertical-align: middle;
 }
 
+.addondemo .v-grid-editor-cells > div.not-editable.v-grid-cell {
+	float: none;
+}
+
 .addondemo .v-grid-editor-cells > div .error::before {
 	border-top: 9px solid #ed473b;
 	border-right: 9px solid transparent;
@@ -7407,6 +7543,10 @@ div.v-layout.v-horizontal.v-widget {
 	box-shadow: inset 0 1px 0 #f2f2f2;
 }
 
+.addondemo .v-grid-editor-cells > div input[type="text"].v-datefield-textfield {
+	padding-left: 44.4px;
+}
+
 .v-ie8 .addondemo .v-grid-editor-cells > div .v-datefield-button {
 	margin-left: 0px;
 }
@@ -7420,15 +7560,19 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .addondemo .v-grid-editor-cells > div .v-select {
-	padding-left: 6px;
-	padding-right: 6px;
+	padding-left: 9px;
+	padding-right: 9px;
 }
 
 .addondemo .v-grid-editor-cells > div .v-checkbox {
-	margin: 0 6px;
+	margin: 0 9px 0 18px;
 }
 
-.addondemo .v-grid-editor-cells > div .v-checkbox label {
+.addondemo .v-grid-editor-cells > div .v-checkbox  > input[type="checkbox"] {
+	margin-left: 0;
+}
+
+.addondemo .v-grid-editor-cells > div .v-checkbox  > label {
 	white-space: nowrap;
 }
 
@@ -8350,7 +8494,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .addondemo .v-datefield [class*="button"]:before {
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 	content: "\f073";
 	-webkit-transition: color 140ms;
 	-moz-transition: color 140ms;
@@ -8598,22 +8742,22 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .addondemo .v-datefield-popup .v-button-prevyear:before {
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 	content: "\f100";
 }
 
 .addondemo .v-datefield-popup .v-button-prevmonth:before {
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 	content: "\f104";
 }
 
 .addondemo .v-datefield-popup .v-button-nextyear:before {
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 	content: "\f101";
 }
 
 .addondemo .v-datefield-popup .v-button-nextmonth:before {
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 	content: "\f105";
 }
 
@@ -8791,22 +8935,22 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .addondemo .v-button-prevyear:before {
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 	content: "\f100";
 }
 
 .addondemo .v-button-prevmonth:before {
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 	content: "\f104";
 }
 
 .addondemo .v-button-nextyear:before {
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 	content: "\f101";
 }
 
 .addondemo .v-button-nextmonth:before {
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 	content: "\f105";
 }
 
@@ -8955,7 +9099,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .addondemo .v-datefield-tiny [class*="button"]:before {
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 	content: "\f073";
 	-webkit-transition: color 140ms;
 	-moz-transition: color 140ms;
@@ -9070,7 +9214,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .addondemo .v-datefield-compact [class*="button"]:before, .addondemo .v-datefield-small [class*="button"]:before {
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 	content: "\f073";
 	-webkit-transition: color 140ms;
 	-moz-transition: color 140ms;
@@ -9190,7 +9334,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .addondemo .v-datefield-large [class*="button"]:before {
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 	content: "\f073";
 	-webkit-transition: color 140ms;
 	-moz-transition: color 140ms;
@@ -9306,7 +9450,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .addondemo .v-datefield-huge [class*="button"]:before {
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 	content: "\f073";
 	-webkit-transition: color 140ms;
 	-moz-transition: color 140ms;
@@ -9486,22 +9630,22 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .addondemo .v-button-prevyear:before {
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 	content: "\f100";
 }
 
 .addondemo .v-button-prevmonth:before {
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 	content: "\f104";
 }
 
 .addondemo .v-button-nextyear:before {
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 	content: "\f101";
 }
 
 .addondemo .v-button-nextmonth:before {
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 	content: "\f105";
 }
 
@@ -9797,7 +9941,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .addondemo .v-menubar .v-menubar-submenu-indicator  + .v-menubar-menuitem-caption:after {
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 	content: "\f078";
 	font-size: 0.7em;
 	vertical-align: 0.15em;
@@ -9881,7 +10025,7 @@ div.v-layout.v-horizontal.v-widget {
 .addondemo .v-menubar-popup .v-menubar-submenu-indicator  + .v-menubar-menuitem-caption:after {
 	position: absolute;
 	right: 10px;
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 	content: "\f054";
 	line-height: 29px;
 }
@@ -9904,7 +10048,7 @@ div.v-layout.v-horizontal.v-widget {
 
 .addondemo .v-menubar-popup [class*="checked"] .v-menubar-menuitem-caption:before {
 	content: "\f00c";
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 	position: absolute;
 	left: 10px;
 }
@@ -10091,7 +10235,7 @@ div.v-layout.v-horizontal.v-widget {
 
 :root .addondemo .v-radiobutton > input ~ label:after {
 	content: "\f00c";
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 	color: transparent;
 	-webkit-transition: color 100ms;
 	-moz-transition: color 100ms;
@@ -10254,7 +10398,7 @@ div.v-layout.v-horizontal.v-widget {
 
 :root .addondemo .v-select-optiongroup-small .v-checkbox > input ~ label:after {
 	content: "\f00c";
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 	color: transparent;
 	-webkit-transition: color 100ms;
 	-moz-transition: color 100ms;
@@ -10383,7 +10527,7 @@ div.v-layout.v-horizontal.v-widget {
 
 :root .addondemo .v-select-optiongroup-small .v-radiobutton > input ~ label:after {
 	content: "\f00c";
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 	color: transparent;
 	-webkit-transition: color 100ms;
 	-moz-transition: color 100ms;
@@ -10546,7 +10690,7 @@ div.v-layout.v-horizontal.v-widget {
 
 :root .addondemo .v-select-optiongroup-large .v-checkbox > input ~ label:after {
 	content: "\f00c";
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 	color: transparent;
 	-webkit-transition: color 100ms;
 	-moz-transition: color 100ms;
@@ -10675,7 +10819,7 @@ div.v-layout.v-horizontal.v-widget {
 
 :root .addondemo .v-select-optiongroup-large .v-radiobutton > input ~ label:after {
 	content: "\f00c";
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 	color: transparent;
 	-webkit-transition: color 100ms;
 	-moz-transition: color 100ms;
@@ -11198,7 +11342,7 @@ div.v-layout.v-horizontal.v-widget {
 	margin-left: -1.9em;
 	vertical-align: top;
 	content: "\f0da";
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 	text-align: center;
 	background: transparent;
 }
@@ -11224,7 +11368,7 @@ div.v-layout.v-horizontal.v-widget {
 
 .addondemo .v-tree-node-caption > div:before {
 	content: "\f0da";
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 	display: inline-block;
 	width: 0.5em;
 	text-align: center;
@@ -11287,12 +11431,12 @@ div.v-layout.v-horizontal.v-widget {
 	-o-transform: rotate(90deg);
 	transform: rotate(90deg);
 	content: "\f0da";
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 }
 
 .v-ie8 .addondemo .v-tree-node-expanded:before {
 	content: "\f0d7";
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 }
 
 .addondemo .v-tree-node-leaf:before, .addondemo .v-tree-node-leaf > .v-tree-node-caption > div:before {
@@ -11510,7 +11654,7 @@ div.v-layout.v-horizontal.v-widget {
 	border-top: 1px solid #d4d4d4;
 }
 
-.addondemo .v-table-table tr:first-child td {
+.addondemo .v-table-table tr:first-child > td {
 	border-top: none;
 }
 
@@ -11570,12 +11714,12 @@ div.v-layout.v-horizontal.v-widget {
 
 .addondemo .v-table-header-cell-asc .v-table-sort-indicator:before {
 	content: "\f0de";
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 }
 
 .addondemo .v-table-header-cell-desc .v-table-sort-indicator:before {
 	content: "\f0dd";
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 }
 
 .addondemo [class*="rowheader"] span.v-icon {
@@ -11689,7 +11833,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .addondemo .v-table-column-selector:before {
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 	content: "\f013";
 }
 
@@ -11703,7 +11847,7 @@ div.v-layout.v-horizontal.v-widget {
 
 .addondemo .v-on:before, .addondemo .v-off:before {
 	content: "\f00c";
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 	font-size: 0.9em;
 	margin-right: 6px;
 }
@@ -11967,12 +12111,12 @@ div.v-layout.v-horizontal.v-widget {
 
 .addondemo .v-treetable-node-closed:before {
 	content: "\f0da";
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 }
 
 .addondemo .v-treetable-node-open:before {
 	content: "\f0d7";
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 }
 
 .addondemo .v-splitpanel-horizontal  > div > .v-splitpanel-hsplitter {
@@ -12749,7 +12893,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .addondemo .v-tabsheet-scroller [class*="Next"]:before {
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 	content: "\f054";
 }
 
@@ -12758,7 +12902,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .addondemo .v-tabsheet-scroller [class*="Prev"]:before {
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 	content: "\f053";
 }
 
@@ -13016,8 +13160,8 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .addondemo .v-colorpicker-popup .resize-button:before {
-	font-family: FontAwesome;
-	content: "\F141";
+	font-family: ThemeIcons;
+	content: "\f141";
 }
 
 .addondemo .v-colorpicker-popup .resize-button-caption {
@@ -13420,12 +13564,12 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .addondemo .v-select-twincol-buttons .v-button-wrap:before {
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 	content: "\f053";
 }
 
 .addondemo .v-select-twincol-buttons .v-button:first-child .v-button-wrap:before {
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 	content: "\f054";
 }
 
@@ -13495,12 +13639,12 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .addondemo .v-calendar-header-week .v-calendar-back:before {
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 	content: "\f053";
 }
 
 .addondemo .v-calendar-header-week .v-calendar-next:before {
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 	content: "\f054";
 }
 
@@ -14034,7 +14178,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .addondemo .v-label-success:before, .addondemo .v-label-failure:before {
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 	content: "\f00c";
 	margin-right: 0.5em;
 	margin-left: -19px;
@@ -14341,7 +14485,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .addondemo .v-richtextarea .gwt-RichTextToolbar-top div:before {
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 }
 
 .addondemo .v-richtextarea .gwt-RichTextToolbar-top div[title="Toggle Bold"]:before {
@@ -14812,7 +14956,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .addondemo .v-Notification.success .v-Notification-caption:before, .addondemo .v-Notification.failure .v-Notification-caption:before {
-	font-family: FontAwesome;
+	font-family: ThemeIcons;
 	content: "\f00c";
 	margin-right: 0.5em;
 }
@@ -15219,32 +15363,32 @@ div.v-layout.v-horizontal.v-widget {
 	outline: none;
 }
 
-.addondemo .v-ui.valo-menu-responsive[width-range~="801px-1100px"] .valo-menu-part {
+.addondemo .valo-menu-responsive[width-range~="801px-1100px"] .valo-menu-part {
 	background-color: #4b4b4b;
 	min-width: 74px;
 	max-width: 111px;
 }
 
-.addondemo .v-ui.valo-menu-responsive[width-range~="801px-1100px"] .valo-menu-part .valo-menu-title {
+.addondemo .valo-menu-responsive[width-range~="801px-1100px"] .valo-menu-part .valo-menu-title {
 	font-size: 12px;
 }
 
-.addondemo .v-ui.valo-menu-responsive[width-range~="801px-1100px"] .valo-menu-part .valo-menu-title .v-label-undef-w {
+.addondemo .valo-menu-responsive[width-range~="801px-1100px"] .valo-menu-part .valo-menu-title .v-label-undef-w {
 	white-space: normal;
 }
 
-.addondemo .v-ui.valo-menu-responsive[width-range~="801px-1100px"] .valo-menu-part .v-menubar-user-menu {
+.addondemo .valo-menu-responsive[width-range~="801px-1100px"] .valo-menu-part .v-menubar-user-menu {
 	margin-left: 0;
 	margin-right: 0;
 	font-size: 11px;
 }
 
-.addondemo .v-ui.valo-menu-responsive[width-range~="801px-1100px"] .valo-menu-part .v-menubar-user-menu img.v-icon {
+.addondemo .valo-menu-responsive[width-range~="801px-1100px"] .valo-menu-part .v-menubar-user-menu img.v-icon {
 	width: 28px;
 	height: 28px;
 }
 
-.addondemo .v-ui.valo-menu-responsive[width-range~="801px-1100px"] .valo-menu-part [class*="subtitle"] {
+.addondemo .valo-menu-responsive[width-range~="801px-1100px"] .valo-menu-part [class*="subtitle"] {
 	margin: 9px 0 0;
 	padding: 7px 25px 7px 9px;
 	line-height: 1;
@@ -15256,15 +15400,15 @@ div.v-layout.v-horizontal.v-widget {
 	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
 }
 
-.addondemo .v-ui.valo-menu-responsive[width-range~="801px-1100px"] .valo-menu-part [class*="subtitle"] [class*="badge"] {
+.addondemo .valo-menu-responsive[width-range~="801px-1100px"] .valo-menu-part [class*="subtitle"] [class*="badge"] {
 	right: 9px;
 }
 
-.addondemo .v-ui.valo-menu-responsive[width-range~="801px-1100px"] .valo-menu-part [class*="subtitle"]  + .valo-menu-item {
+.addondemo .valo-menu-responsive[width-range~="801px-1100px"] .valo-menu-part [class*="subtitle"]  + .valo-menu-item {
 	border-top: none;
 }
 
-.addondemo .v-ui.valo-menu-responsive[width-range~="801px-1100px"] .valo-menu-part .valo-menu-item {
+.addondemo .valo-menu-responsive[width-range~="801px-1100px"] .valo-menu-part .valo-menu-item {
 	display: block;
 	font-size: 26px;
 	line-height: 1;
@@ -15273,11 +15417,11 @@ div.v-layout.v-horizontal.v-widget {
 	border-top: 1px solid #555555;
 }
 
-.addondemo .v-ui.valo-menu-responsive[width-range~="801px-1100px"] .valo-menu-part .valo-menu-item:first-child {
+.addondemo .valo-menu-responsive[width-range~="801px-1100px"] .valo-menu-part .valo-menu-item:first-child {
 	border-top: none;
 }
 
-.addondemo .v-ui.valo-menu-responsive[width-range~="801px-1100px"] .valo-menu-part .valo-menu-item [class*="caption"] {
+.addondemo .valo-menu-responsive[width-range~="801px-1100px"] .valo-menu-part .valo-menu-item [class*="caption"] {
 	display: block;
 	width: auto;
 	margin: 0.3em 0 0;
@@ -15286,27 +15430,27 @@ div.v-layout.v-horizontal.v-widget {
 	line-height: 1.3;
 }
 
-.addondemo .v-ui.valo-menu-responsive[width-range~="801px-1100px"] .valo-menu-part .valo-menu-item .v-icon {
+.addondemo .valo-menu-responsive[width-range~="801px-1100px"] .valo-menu-part .valo-menu-item .v-icon {
 	margin: 0;
 }
 
-.addondemo .v-ui.valo-menu-responsive[width-range~="801px-1100px"] .valo-menu-part .valo-menu-item span.v-icon {
+.addondemo .valo-menu-responsive[width-range~="801px-1100px"] .valo-menu-part .valo-menu-item span.v-icon {
 	opacity: 0.8;
 }
 
-.addondemo .v-ui.valo-menu-responsive[width-range~="801px-1100px"] .valo-menu-part .valo-menu-item.selected {
+.addondemo .valo-menu-responsive[width-range~="801px-1100px"] .valo-menu-part .valo-menu-item.selected {
 	background: #434343;
 }
 
-.addondemo .v-ui.valo-menu-responsive[width-range~="801px-1100px"] .valo-menu-part .valo-menu-item.selected .v-icon {
+.addondemo .valo-menu-responsive[width-range~="801px-1100px"] .valo-menu-part .valo-menu-item.selected .v-icon {
 	opacity: 1;
 }
 
-.addondemo .v-ui.valo-menu-responsive[width-range~="801px-1100px"] .valo-menu-part .valo-menu-item.selected [class*="badge"] {
+.addondemo .valo-menu-responsive[width-range~="801px-1100px"] .valo-menu-part .valo-menu-item.selected [class*="badge"] {
 	border-color: #434343;
 }
 
-.addondemo .v-ui.valo-menu-responsive[width-range~="801px-1100px"] .valo-menu-part .valo-menu-item [class*="badge"] {
+.addondemo .valo-menu-responsive[width-range~="801px-1100px"] .valo-menu-part .valo-menu-item [class*="badge"] {
 	padding-left: 4px;
 	padding-right: 4px;
 	top: 7px;
@@ -15314,33 +15458,33 @@ div.v-layout.v-horizontal.v-widget {
 	border: 2px solid #4b4b4b;
 }
 
-.addondemo .v-ui.valo-menu-responsive[width-range~="0-800px"] {
+.addondemo .valo-menu-responsive[width-range~="0-800px"] {
 	padding-top: 37px;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
-.addondemo .v-ui.valo-menu-responsive[width-range~="0-800px"] .v-loading-indicator {
+.addondemo .valo-menu-responsive[width-range~="0-800px"] .v-loading-indicator {
 	top: 37px;
 }
 
-.addondemo .v-ui.valo-menu-responsive[width-range~="0-800px"]  > .v-widget {
+.addondemo .valo-menu-responsive[width-range~="0-800px"]  > .v-widget {
 	position: relative !important;
 }
 
-.addondemo .v-ui.valo-menu-responsive[width-range~="0-800px"] .valo-menu {
+.addondemo .valo-menu-responsive[width-range~="0-800px"] .valo-menu {
 	border-right: none;
 }
 
-.addondemo .v-ui.valo-menu-responsive[width-range~="0-800px"] .valo-menu-part {
+.addondemo .valo-menu-responsive[width-range~="0-800px"] .valo-menu-part {
 	overflow: visible;
 }
 
-.addondemo .v-ui.valo-menu-responsive[width-range~="0-800px"] .valo-menu-toggle {
+.addondemo .valo-menu-responsive[width-range~="0-800px"] .valo-menu-toggle {
 	display: inline-block;
 }
 
-.addondemo .v-ui.valo-menu-responsive[width-range~="0-800px"] .valo-menu-title {
+.addondemo .valo-menu-responsive[width-range~="0-800px"] .valo-menu-title {
 	position: fixed;
 	z-index: 100;
 	top: 0;
@@ -15352,7 +15496,7 @@ div.v-layout.v-horizontal.v-widget {
 	-webkit-backface-visibility: hidden;
 }
 
-.addondemo .v-ui.valo-menu-responsive[width-range~="0-800px"] .valo-menu .v-menubar-user-menu {
+.addondemo .valo-menu-responsive[width-range~="0-800px"] .valo-menu .v-menubar-user-menu {
 	position: fixed;
 	z-index: 100;
 	top: 0;
@@ -15365,12 +15509,12 @@ div.v-layout.v-horizontal.v-widget {
 	-webkit-backface-visibility: hidden;
 }
 
-.addondemo .v-ui.valo-menu-responsive[width-range~="0-800px"] .valo-menu .v-menubar-user-menu .v-menubar-menuitem {
+.addondemo .valo-menu-responsive[width-range~="0-800px"] .valo-menu .v-menubar-user-menu .v-menubar-menuitem {
 	line-height: 36px;
 	white-space: nowrap;
 }
 
-.addondemo .v-ui.valo-menu-responsive[width-range~="0-800px"] .valo-menu .v-menubar-user-menu img.v-icon {
+.addondemo .valo-menu-responsive[width-range~="0-800px"] .valo-menu .v-menubar-user-menu img.v-icon {
 	display: inline-block;
 	margin: 0 6px 0 0;
 	width: 19px;
@@ -15379,7 +15523,7 @@ div.v-layout.v-horizontal.v-widget {
 	border: none;
 }
 
-.addondemo .v-ui.valo-menu-responsive[width-range~="0-800px"] .valo-menuitems {
+.addondemo .valo-menu-responsive[width-range~="0-800px"] .valo-menuitems {
 	height: 100%;
 	background-color: #4b4b4b;
 	background-image: -webkit-linear-gradient(right, #414141 0%, #4b4b4b 9px);
@@ -15390,7 +15534,7 @@ div.v-layout.v-horizontal.v-widget {
 	border-right: 1px solid #3b3b3b;
 	white-space: nowrap;
 	position: fixed;
-	z-index: 200;
+	z-index: 9000;
 	top: 37px;
 	bottom: 0;
 	height: auto;
@@ -15407,7 +15551,7 @@ div.v-layout.v-horizontal.v-widget {
 	transition: all 300ms;
 }
 
-.addondemo .v-ui.valo-menu-responsive[width-range~="0-800px"] .valo-menu-visible .valo-menuitems {
+.addondemo .valo-menu-responsive[width-range~="0-800px"] .valo-menu-visible .valo-menuitems {
 	-webkit-transform: translatex(0%);
 	-moz-transform: translatex(0%);
 	-ms-transform: translatex(0%);
@@ -15415,11 +15559,11 @@ div.v-layout.v-horizontal.v-widget {
 	transform: translatex(0%);
 }
 
-.addondemo .v-ui.valo-menu-responsive[width-range~="0-500px"] .valo-menu-toggle .v-button-caption {
+.addondemo .valo-menu-responsive[width-range~="0-500px"] .valo-menu-toggle .v-button-caption {
 	display: none;
 }
 
-.addondemo .v-ui.valo-menu-responsive[width-range~="0-500px"] .valo-menu .v-menubar-user-menu .v-menubar-menuitem-caption {
+.addondemo .valo-menu-responsive[width-range~="0-500px"] .valo-menu .v-menubar-user-menu .v-menubar-menuitem-caption {
 	display: inline-block;
 	width: 19px;
 	overflow: hidden;

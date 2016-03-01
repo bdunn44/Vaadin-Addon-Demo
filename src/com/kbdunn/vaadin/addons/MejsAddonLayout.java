@@ -73,11 +73,12 @@ public class MejsAddonLayout extends VerticalLayout implements
 		addComponent(new ControlPanel());
 		
 		Panel playerPanel = new Panel();
-		playerPanel.setSizeUndefined();
+		playerPanel.setWidth("80%");
 		playerPanel.addStyleName(ValoTheme.PANEL_WELL);
 		playerLayout = new VerticalLayout();
 		playerLayout.setMargin(true);
 		playerLayout.setSpacing(true);
+		playerLayout.setSizeFull();
 		playerPanel.setContent(playerLayout);
 		addComponent(playerPanel);
 		setComponentAlignment(playerPanel, Alignment.MIDDLE_CENTER);
@@ -85,10 +86,12 @@ public class MejsAddonLayout extends VerticalLayout implements
 		Label h1 = new Label("MediaElement.js Player");
 		h1.addStyleName(ValoTheme.LABEL_H1);
 		h1.addStyleName(ValoTheme.LABEL_NO_MARGIN);
+		h1.setSizeUndefined();
 		playerLayout.addComponent(h1);
 		playerLayout.setComponentAlignment(h1, Alignment.MIDDLE_CENTER);
 		player = new MediaElementPlayer();
 		nowPlaying = new Label();
+		nowPlaying.setSizeUndefined();
 		playerLayout.addComponent(nowPlaying);
 		playerLayout.setComponentAlignment(nowPlaying, Alignment.MIDDLE_CENTER);
 		playerLayout.addComponent(player);

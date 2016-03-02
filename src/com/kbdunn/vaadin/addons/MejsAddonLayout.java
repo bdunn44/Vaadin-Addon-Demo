@@ -3,21 +3,23 @@ package com.kbdunn.vaadin.addons;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import com.kbdunn.vaadin.addons.mediaelement.CanPlayListener;
-import com.kbdunn.vaadin.addons.mediaelement.LoadedDataListener;
-import com.kbdunn.vaadin.addons.mediaelement.LoadedMetadataListener;
+import com.kbdunn.vaadin.addons.mediaelement.interfaces.CanPlayListener;
+import com.kbdunn.vaadin.addons.mediaelement.interfaces.LoadedDataListener;
+import com.kbdunn.vaadin.addons.mediaelement.interfaces.LoadedMetadataListener;
+import com.kbdunn.vaadin.addons.mediaelement.interfaces.PausedListener;
+import com.kbdunn.vaadin.addons.mediaelement.interfaces.PlaybackEndedListener;
+import com.kbdunn.vaadin.addons.mediaelement.interfaces.PlayedListener;
+import com.kbdunn.vaadin.addons.mediaelement.interfaces.PlayingListener;
+import com.kbdunn.vaadin.addons.mediaelement.interfaces.SeekedListener;
+import com.kbdunn.vaadin.addons.mediaelement.interfaces.StateUpdatedListener;
+import com.kbdunn.vaadin.addons.mediaelement.interfaces.VolumeChangedListener;
 import com.kbdunn.vaadin.addons.mediaelement.MediaElementPlayer;
-import com.kbdunn.vaadin.addons.mediaelement.PausedListener;
-import com.kbdunn.vaadin.addons.mediaelement.PlaybackEndedListener;
-import com.kbdunn.vaadin.addons.mediaelement.PlayedListener;
-import com.kbdunn.vaadin.addons.mediaelement.PlayingListener;
-import com.kbdunn.vaadin.addons.mediaelement.SeekedListener;
-import com.kbdunn.vaadin.addons.mediaelement.VolumeChangedListener;
 import com.vaadin.data.Property.ValueChangeEvent;
 import com.vaadin.data.Property.ValueChangeListener;
 import com.vaadin.server.ExternalResource;
 import com.vaadin.server.Resource;
 import com.vaadin.server.ThemeResource;
+import com.vaadin.server.UserError;
 import com.vaadin.shared.ui.label.ContentMode;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
@@ -34,7 +36,7 @@ import com.vaadin.ui.themes.ValoTheme;
 
 public class MejsAddonLayout extends VerticalLayout implements 
 		CanPlayListener, LoadedDataListener, LoadedMetadataListener, PausedListener, 
-		PlayedListener, SeekedListener, VolumeChangedListener, PlaybackEndedListener, PlayingListener {
+		PlayedListener, SeekedListener, VolumeChangedListener, PlaybackEndedListener, PlayingListener, StateUpdatedListener {
 
 	private static final long serialVersionUID = 1L;
 	private static Map<String, Resource> MEDIA_FILES;
@@ -59,7 +61,7 @@ public class MejsAddonLayout extends VerticalLayout implements
 	private Label nowPlaying;
 	private ComboBox resources;
 	private Button play, pause, setVolume, setCurrentTime, mute, unmute;
-	private TextField currentTimeValue, volumeValue, currentTime, duration, volume;
+	private TextField currentTimeInput, volumeInput, currentTimeDisplay, durationDisplay, volumeDisplay;
 	private VerticalLayout playerLayout;
 	
 	public MejsAddonLayout() { 
@@ -90,6 +92,15 @@ public class MejsAddonLayout extends VerticalLayout implements
 		playerLayout.addComponent(h1);
 		playerLayout.setComponentAlignment(h1, Alignment.MIDDLE_CENTER);
 		player = new MediaElementPlayer();
+		player.addCanPlayListener(this);
+		player.addLoadedDataListener(this);
+		player.addPauseListener(this);
+		player.addPlaybackEndedListener(this);
+		player.addPlayingListener(this);
+		player.addPlayListener(this);
+		player.addSeekedListener(this);
+		player.addVolumeChangeListener(this);
+		player.addStateUpdatedListener(this);
 		nowPlaying = new Label();
 		nowPlaying.setSizeUndefined();
 		playerLayout.addComponent(nowPlaying);
@@ -105,65 +116,55 @@ public class MejsAddonLayout extends VerticalLayout implements
 	}
 
 	@Override
-	public void volumeChanged(MediaElementPlayer component) {
+	public void volumeChanged(MediaElementPlayer player) {
 		Notification.show("Volume Changed!", Notification.Type.TRAY_NOTIFICATION);
-		volume.setValue(String.valueOf(component.getVolume()));
 	}
 
 	@Override
-	public void seeked(MediaElementPlayer component) {
+	public void seeked(MediaElementPlayer player) {
 		Notification.show("Seeked!", Notification.Type.TRAY_NOTIFICATION);
-		currentTime.setValue(String.valueOf(component.getCurrentTime()));
-		duration.setValue(String.valueOf(component.getDuration()));
 	}
 	
 	@Override
-	public void played(MediaElementPlayer component) {
+	public void played(MediaElementPlayer player) {
 		Notification.show("Played!", Notification.Type.TRAY_NOTIFICATION);
-		currentTime.setValue(String.valueOf(component.getCurrentTime()));
-		duration.setValue(String.valueOf(component.getDuration()));
 	}
 
 	@Override
-	public void paused(MediaElementPlayer component) {
+	public void paused(MediaElementPlayer player) {
 		Notification.show("Paused!", Notification.Type.TRAY_NOTIFICATION);
-		currentTime.setValue(String.valueOf(component.getCurrentTime()));
-		duration.setValue(String.valueOf(component.getDuration()));
 	}
 
 	@Override
-	public void metadataLoaded(MediaElementPlayer component) {
+	public void metadataLoaded(MediaElementPlayer player) {
 		Notification.show("Metadata Loaded!", Notification.Type.TRAY_NOTIFICATION);
-		currentTime.setValue(String.valueOf(component.getCurrentTime()));
-		duration.setValue(String.valueOf(component.getDuration()));
 	}
 
 	@Override
-	public void dataLoaded(MediaElementPlayer component) {
+	public void dataLoaded(MediaElementPlayer player) {
 		Notification.show("Data Loaded!", Notification.Type.TRAY_NOTIFICATION);
-		currentTime.setValue(String.valueOf(component.getCurrentTime()));
-		duration.setValue(String.valueOf(component.getDuration()));
 	}
 
 	@Override
-	public void canPlay(MediaElementPlayer component) {
+	public void canPlay(MediaElementPlayer player) {
 		Notification.show("Can Play!", Notification.Type.TRAY_NOTIFICATION);
-		currentTime.setValue(String.valueOf(component.getCurrentTime()));
-		duration.setValue(String.valueOf(component.getDuration()));
 	}
 
 	@Override
-	public void playing(MediaElementPlayer component) {
+	public void playing(MediaElementPlayer player) {
 		Notification.show("Playing!", Notification.Type.TRAY_NOTIFICATION);
-		currentTime.setValue(String.valueOf(component.getCurrentTime()));
-		duration.setValue(String.valueOf(component.getDuration()));
 	}
 
 	@Override
-	public void playbackEnded(MediaElementPlayer component) {
+	public void playbackEnded(MediaElementPlayer player) {
 		Notification.show("Playback Ended!", Notification.Type.TRAY_NOTIFICATION);
-		currentTime.setValue(String.valueOf(component.getCurrentTime()));
-		duration.setValue(String.valueOf(component.getDuration()));
+	}
+
+	@Override
+	public void stateUpdated(MediaElementPlayer player) {
+		currentTimeDisplay.setValue(String.valueOf(player.getCurrentTime()));
+		durationDisplay.setValue(String.valueOf(player.getDuration()));
+		volumeDisplay.setValue(String.valueOf(player.getVolume()));
 	}
 	
 	class ControlPanel extends Panel {
@@ -186,11 +187,11 @@ public class MejsAddonLayout extends VerticalLayout implements
 			
 			HorizontalLayout inputs = new HorizontalLayout();
 			inputs.setSpacing(true);
-			inputs.addComponent(currentTime);
-			inputs.addComponent(duration);
-			inputs.addComponent(volume);
-			inputs.addComponent(currentTimeValue);
-			inputs.addComponent(volumeValue);
+			inputs.addComponent(currentTimeDisplay);
+			inputs.addComponent(durationDisplay);
+			inputs.addComponent(volumeDisplay);
+			inputs.addComponent(currentTimeInput);
+			inputs.addComponent(volumeInput);
 			content.addComponent(inputs);
 			
 			HorizontalLayout controlButtons = new HorizontalLayout();
@@ -248,7 +249,17 @@ public class MejsAddonLayout extends VerticalLayout implements
 
 				@Override
 				public void buttonClick(ClickEvent event) {
-					player.setVolume(Integer.valueOf(volumeValue.getValue()));
+					Integer v = null;
+					try {
+						v = Integer.valueOf(volumeInput.getValue());
+						if (v < 0 || v > 10) {
+							throw new IllegalArgumentException();
+						}
+						player.setVolume(v);
+						volumeInput.setComponentError(null);
+					} catch (Exception e) {
+						volumeInput.setComponentError(new UserError("Enter a number 1-10"));
+					}
 				}
 			});
 			setCurrentTime = new Button("Set Current Time", new ClickListener() {
@@ -256,7 +267,14 @@ public class MejsAddonLayout extends VerticalLayout implements
 
 				@Override
 				public void buttonClick(ClickEvent event) {
-					player.setCurrentTime(Integer.valueOf(currentTimeValue.getValue()));
+					Integer t = null;
+					try {
+						t = Integer.valueOf(currentTimeInput.getValue());
+						player.setCurrentTime(t);
+						currentTimeInput.setComponentError(null);
+					} catch (Exception e) {
+						currentTimeInput.setComponentError(new UserError("Enter a number 0-" + player.getDuration()));
+					}
 				}
 			});
 			mute = new Button("Mute", new ClickListener() {
@@ -278,19 +296,21 @@ public class MejsAddonLayout extends VerticalLayout implements
 		}
 		
 		private void initInfoLabels() {
-			currentTime = new TextField("Current Time (seconds)");
-			currentTime.setEnabled(false);
-			duration = new TextField("Duration (seconds)");
-			duration.setEnabled(false);
-			volume = new TextField("Current Volume (1-10)");
-			volume.setEnabled(false);
+			currentTimeDisplay = new TextField("Current Time (seconds)");
+			currentTimeDisplay.setEnabled(false);
+			durationDisplay = new TextField("Duration (seconds)");
+			durationDisplay.setEnabled(false);
+			volumeDisplay = new TextField("Current Volume (1-10)");
+			volumeDisplay.setEnabled(false);
 		}
 		
 		private void initControlInputs() {
-			currentTimeValue = new TextField("Set Current Time (seconds):");
-			currentTimeValue.setValue("0");
-			volumeValue = new TextField("Set Volume (1-10):");
-			volumeValue.setValue("10");
+			currentTimeInput = new TextField("Set Current Time (seconds):");
+			currentTimeInput.setValue("0");
+			currentTimeInput.setRequired(true);
+			volumeInput = new TextField("Set Volume (1-10):");
+			volumeInput.setValue("10");
+			volumeInput.setRequired(true);
 		}
 	}
 }

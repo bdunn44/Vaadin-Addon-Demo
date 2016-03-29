@@ -3,6 +3,7 @@ package com.kbdunn.vaadin.addons;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import com.kbdunn.vaadin.addons.mediaelement.MediaElementPlayer;
 import com.kbdunn.vaadin.addons.mediaelement.interfaces.CanPlayListener;
 import com.kbdunn.vaadin.addons.mediaelement.interfaces.LoadedDataListener;
 import com.kbdunn.vaadin.addons.mediaelement.interfaces.LoadedMetadataListener;
@@ -13,7 +14,6 @@ import com.kbdunn.vaadin.addons.mediaelement.interfaces.PlayingListener;
 import com.kbdunn.vaadin.addons.mediaelement.interfaces.SeekedListener;
 import com.kbdunn.vaadin.addons.mediaelement.interfaces.StateUpdatedListener;
 import com.kbdunn.vaadin.addons.mediaelement.interfaces.VolumeChangedListener;
-import com.kbdunn.vaadin.addons.mediaelement.MediaElementPlayer;
 import com.vaadin.data.Property.ValueChangeEvent;
 import com.vaadin.data.Property.ValueChangeListener;
 import com.vaadin.server.ExternalResource;
@@ -33,6 +33,7 @@ import com.vaadin.ui.Panel;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.themes.ValoTheme;
+import com.vaadin.util.FileTypeResolver;
 
 public class MejsAddonLayout extends VerticalLayout implements 
 		CanPlayListener, LoadedDataListener, LoadedMetadataListener, PausedListener, 
@@ -40,21 +41,34 @@ public class MejsAddonLayout extends VerticalLayout implements
 
 	private static final long serialVersionUID = 1L;
 	private static Map<String, Resource> MEDIA_FILES;
-	private static final String SONG_ACDC = "AC/DC - Back in Black (.ogg)";
-	private static final String SONG_BONOBO = "Bonobo - Noctuary (.mp3)";
+	private static final String SONG_MP3 = "Bonobo - Noctuary (.mp3)";
+	private static final String SONG_OGG = "Radiohead - Pyramid Song (.ogg)";
+	private static final String SONG_WMA = "Tame Impala - The Less I Know The Better (.wma)";
 	private static final String VIDEO_YOUTUBE = "The Art of Flight - Trailer (YouTube)";
-	//private static final String VIDEO_VIMEO = "The Art of Flight - Trailer (Vimeo)";
-	private static final String VIDEO_FAKER = "Chet Faker - Archangel (.mp4)";
-	private static final String VIDEO_ALTJ = "alt-J - Left Hand Free (.mp4)";
+	private static final String VIDEO_VIMEO = "Danny MacAskill - Way Back Home (Vimeo)";
+	private static final String VIDEO_FLV = "José González - Down the Line (.flv)";
+	private static final String VIDEO_MP4 = "alt-J - Left Hand Free (.mp4)";
+	private static final String VIDEO_WEBM = "Gramatik - So Much For Love (.webm)";
 	
 	static {
+		FileTypeResolver.addExtension("ogg", "audio/ogg");
+ 		FileTypeResolver.addExtension("ogv", "video/ogg");
+ 		FileTypeResolver.addExtension("mp4", "video/mp4");
+ 		FileTypeResolver.addExtension("webm", "video/webm");
+ 		FileTypeResolver.addExtension("wmv", "video/x-ms-wmv");
+ 		FileTypeResolver.addExtension("wma", "audio/x-ms-wma");
+ 		FileTypeResolver.addExtension("flv", "video/x-flv");
+ 		FileTypeResolver.addExtension("avi", "video/x-msvideo");
+		
 		MEDIA_FILES = new LinkedHashMap<String, Resource>();
-		MEDIA_FILES.put(SONG_BONOBO, new ThemeResource("songs/01_Noctuary.mp3"));
-		MEDIA_FILES.put(SONG_ACDC, new ThemeResource("songs/ACDC_-_Back_In_Black-sample.ogg"));
-		MEDIA_FILES.put(VIDEO_FAKER, new ThemeResource("videos/Chet_Faker-Archangel_Live_Sessions.mp4"));
+		MEDIA_FILES.put(SONG_MP3, new ThemeResource("songs/01_Noctuary.mp3"));
+		MEDIA_FILES.put(SONG_OGG, new ThemeResource("songs/radiohead.ogg"));
+		MEDIA_FILES.put(SONG_WMA, new ThemeResource("songs/tame_impala.wma"));
 		MEDIA_FILES.put(VIDEO_YOUTUBE, new ExternalResource("https://www.youtube.com/watch?v=kh29_SERH0Y"));
-		//MEDIA_FILES.put(VIDEO_VIMEO, new ExternalResource("https://vimeo.com/20065250"));
-		MEDIA_FILES.put(VIDEO_ALTJ, new ThemeResource("videos/alt-J-Left_Hand_Free.mp4"));
+		MEDIA_FILES.put(VIDEO_VIMEO, new ExternalResource("https://vimeo.com/17892962"));
+		MEDIA_FILES.put(VIDEO_FLV, new ThemeResource("videos/Down_the_Line.flv"));
+		MEDIA_FILES.put(VIDEO_MP4, new ThemeResource("videos/alt-J-Left_Hand_Free.mp4"));
+		MEDIA_FILES.put(VIDEO_WEBM, new ThemeResource("videos/gramatik.webm"));
 	}
 	
 	private MediaElementPlayer player;

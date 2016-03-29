@@ -1619,6 +1619,7 @@ div.v-layout.v-horizontal.v-widget {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	transform: translate(0, 0);
+	line-height: inherit;
 }
 
 .addondemo .fa-lg {

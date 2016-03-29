@@ -28,7 +28,7 @@ public class VdnUI extends UI  {
 		
 		layout = new VerticalLayout();
 		content.setContent(layout);
-		layout.addStyleName(ValoTheme.LAYOUT_WELL);
+		//layout.addStyleName(ValoTheme.LAYOUT_WELL);
 		layout.setMargin(true);
 		layout.setSpacing(true);
 		

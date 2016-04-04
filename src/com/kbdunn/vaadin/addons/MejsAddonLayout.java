@@ -1,5 +1,7 @@
 package com.kbdunn.vaadin.addons;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -16,8 +18,11 @@ import com.kbdunn.vaadin.addons.mediaelement.interfaces.StateUpdatedListener;
 import com.kbdunn.vaadin.addons.mediaelement.interfaces.VolumeChangedListener;
 import com.vaadin.data.Property.ValueChangeEvent;
 import com.vaadin.data.Property.ValueChangeListener;
+import com.vaadin.server.ClassResource;
 import com.vaadin.server.ExternalResource;
+import com.vaadin.server.FileResource;
 import com.vaadin.server.Resource;
+import com.vaadin.server.StreamResource;
 import com.vaadin.server.ThemeResource;
 import com.vaadin.server.UserError;
 import com.vaadin.shared.ui.label.ContentMode;
@@ -41,14 +46,6 @@ public class MejsAddonLayout extends VerticalLayout implements
 
 	private static final long serialVersionUID = 1L;
 	private static Map<String, Resource> MEDIA_FILES;
-	private static final String SONG_MP3 = "Bonobo - Noctuary (.mp3)";
-	private static final String SONG_OGG = "Radiohead - Pyramid Song (.ogg)";
-	private static final String SONG_WMA = "Tame Impala - The Less I Know The Better (.wma)";
-	private static final String VIDEO_YOUTUBE = "The Art of Flight - Trailer (YouTube)";
-	private static final String VIDEO_VIMEO = "Danny MacAskill - Way Back Home (Vimeo)";
-	private static final String VIDEO_FLV = "José González - Down the Line (.flv)";
-	private static final String VIDEO_MP4 = "alt-J - Left Hand Free (.mp4)";
-	private static final String VIDEO_WEBM = "Gramatik - So Much For Love (.webm)";
 	
 	static {
 		FileTypeResolver.addExtension("ogg", "audio/ogg");
@@ -61,14 +58,27 @@ public class MejsAddonLayout extends VerticalLayout implements
  		FileTypeResolver.addExtension("avi", "video/x-msvideo");
 		
 		MEDIA_FILES = new LinkedHashMap<String, Resource>();
-		MEDIA_FILES.put(SONG_MP3, new ThemeResource("songs/01_Noctuary.mp3"));
-		MEDIA_FILES.put(SONG_OGG, new ThemeResource("songs/radiohead.ogg"));
-		MEDIA_FILES.put(SONG_WMA, new ThemeResource("songs/tame_impala.wma"));
-		MEDIA_FILES.put(VIDEO_YOUTUBE, new ExternalResource("https://www.youtube.com/watch?v=kh29_SERH0Y"));
-		MEDIA_FILES.put(VIDEO_VIMEO, new ExternalResource("https://vimeo.com/17892962"));
-		MEDIA_FILES.put(VIDEO_FLV, new ThemeResource("videos/Down_the_Line.flv"));
-		MEDIA_FILES.put(VIDEO_MP4, new ThemeResource("videos/alt-J-Left_Hand_Free.mp4"));
-		MEDIA_FILES.put(VIDEO_WEBM, new ThemeResource("videos/gramatik.webm"));
+		if (false) { // set to true to test all resource types
+			final File mp3File = new File("../standalone/deployments/VaadinAddonDemo.war/VAADIN/themes/addondemo/songs/radiohead.ogg"); // Wildfly. YMMV.
+			MEDIA_FILES.put("FileResource", new FileResource(mp3File));
+			MEDIA_FILES.put("ClassResource", new ClassResource("VAADIN/themes/addondemo/songs/radiohead.ogg"));
+			MEDIA_FILES.put("StreamResource", new StreamResource(() -> { 
+				try {
+					return new FileInputStream(mp3File);
+				} catch (Exception e) {
+					e.printStackTrace();
+					return null;
+				}
+			}, "radiohead.ogg"));
+		}
+		MEDIA_FILES.put("Bonobo - Noctuary (.mp3)", new ThemeResource("songs/01_Noctuary.mp3"));
+		MEDIA_FILES.put("Radiohead - Pyramid Song (.ogg)", new ThemeResource("songs/radiohead.ogg"));
+		MEDIA_FILES.put("Tame Impala - The Less I Know The Better (.wma)", new ThemeResource("songs/tame_impala.wma"));
+		MEDIA_FILES.put("The Art of Flight - Trailer (YouTube)", new ExternalResource("https://www.youtube.com/watch?v=kh29_SERH0Y"));
+		MEDIA_FILES.put("Danny MacAskill - Way Back Home (Vimeo)", new ExternalResource("https://vimeo.com/17892962"));
+		MEDIA_FILES.put("José González - Down the Line (.flv)", new ThemeResource("videos/Down_the_Line.flv"));
+		MEDIA_FILES.put("alt-J - Left Hand Free (.mp4)", new ThemeResource("videos/alt-J-Left_Hand_Free.mp4"));
+		MEDIA_FILES.put("Gramatik - So Much For Love (.webm)", new ThemeResource("videos/gramatik.webm"));
 	}
 	
 	private MediaElementPlayer player;
@@ -122,7 +132,8 @@ public class MejsAddonLayout extends VerticalLayout implements
 		playerLayout.addComponent(player);
 		playerLayout.setComponentAlignment(player, Alignment.MIDDLE_CENTER);
 		
-		Label link = new Label("<a href='https://vaadin.com/addon/mediaelementjs-player' target='_blank'>https://vaadin.com/addon/mediaelementjs-player</a>", ContentMode.HTML);
+		Label link = new Label("<a href='https://vaadin.com/addon/mediaelementjs-player' "
+				+ "target='_blank'>https://vaadin.com/addon/mediaelementjs-player</a>", ContentMode.HTML);
 		link.setSizeUndefined();
 		link.addStyleName(ValoTheme.LABEL_SMALL);
 		addComponent(link);

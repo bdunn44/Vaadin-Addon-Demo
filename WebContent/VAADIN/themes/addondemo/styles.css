@@ -1,7 +1,7 @@
 @font-face {
 	font-family: "FontAwesomeLabelAddon";
-	src: url(../../../VAADIN/addons/font-awesome-label/fontawesome-webfont.eot?v=4.5.0);
-	src: url(../../../VAADIN/addons/font-awesome-label/fontawesome-webfont.eot?#iefix&v=4.5.0) format("embedded-opentype"), url(../../../VAADIN/addons/font-awesome-label/fontawesome-webfont.woff2?v=4.5.0) format("woff2"), url(../../../VAADIN/addons/font-awesome-label/fontawesome-webfont.woff?v=4.5.0) format("woff"), url(../../../VAADIN/addons/font-awesome-label/fontawesome-webfont.ttf?v=4.5.0) format("truetype"), url(../../../VAADIN/addons/font-awesome-label/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular) format("svg");
+	src: url(../../../VAADIN/addons/font-awesome-label/fontawesome-webfont.eot?v=4.6.3);
+	src: url(../../../VAADIN/addons/font-awesome-label/fontawesome-webfont.eot?#iefix&v=4.6.3) format("embedded-opentype"), url(../../../VAADIN/addons/font-awesome-label/fontawesome-webfont.woff2?v=4.6.3) format("woff2"), url(../../../VAADIN/addons/font-awesome-label/fontawesome-webfont.woff?v=4.6.3) format("woff"), url(../../../VAADIN/addons/font-awesome-label/fontawesome-webfont.ttf?v=4.6.3) format("truetype"), url(../../../VAADIN/addons/font-awesome-label/fontawesome-webfont.svg?v=4.6.3#fontawesomeregular) format("svg");
 	font-weight: normal;
 	font-style: normal;
 }
@@ -1610,6 +1610,10 @@ div.v-layout.v-horizontal.v-widget {
 	}
 }
 
+.addondemo .v-button-wrap .v-icon.FontAwesomeLabelAddon {
+	line-height: inherit;
+}
+
 .addondemo .fa, .addondemo .FontAwesomeLabelAddon, .addondemo .FontAwesomeIconAddon {
 	display: inline-block;
 	font: normal normal normal 14px/1 FontAwesomeLabelAddon;
@@ -1618,8 +1622,6 @@ div.v-layout.v-horizontal.v-widget {
 	text-align: center;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	transform: translate(0, 0);
-	line-height: inherit;
 }
 
 .addondemo .fa-lg {
@@ -1697,6 +1699,22 @@ div.v-layout.v-horizontal.v-widget {
 	margin-left: 0.3em;
 }
 
+.addondemo .pull-right {
+	float: right;
+}
+
+.addondemo .pull-left {
+	float: left;
+}
+
+.addondemo .fa.pull-left {
+	margin-right: 0.3em;
+}
+
+.addondemo .fa.pull-right {
+	margin-left: 0.3em;
+}
+
 .addondemo .fa-spin {
 	-webkit-animation: fa-spin 2s infinite linear;
 	animation: fa-spin 2s infinite linear;
@@ -1708,35 +1726,35 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .addondemo .fa-rotate-90 {
-	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+	-ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
 	-webkit-transform: rotate(90deg);
 	-ms-transform: rotate(90deg);
 	transform: rotate(90deg);
 }
 
 .addondemo .fa-rotate-180 {
-	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+	-ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
 	-webkit-transform: rotate(180deg);
 	-ms-transform: rotate(180deg);
 	transform: rotate(180deg);
 }
 
 .addondemo .fa-rotate-270 {
-	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+	-ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
 	-webkit-transform: rotate(270deg);
 	-ms-transform: rotate(270deg);
 	transform: rotate(270deg);
 }
 
 .addondemo .fa-flip-horizontal {
-	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);
+	-ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
 	-webkit-transform: scale(-1, 1);
 	-ms-transform: scale(-1, 1);
 	transform: scale(-1, 1);
 }
 
 .addondemo .fa-flip-vertical {
-	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1);
+	-ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
 	-webkit-transform: scale(1, -1);
 	-ms-transform: scale(1, -1);
 	transform: scale(1, -1);
@@ -3306,7 +3324,7 @@ div.v-layout.v-horizontal.v-widget {
 	content: "\f1a6";
 }
 
-.addondemo .fa-pied-piper:before {
+.addondemo .fa-pied-piper-pp:before {
 	content: "\f1a7";
 }
 
@@ -3458,7 +3476,7 @@ div.v-layout.v-horizontal.v-widget {
 	content: "\f1ce";
 }
 
-.addondemo .fa-ra:before, .addondemo .fa-rebel:before {
+.addondemo .fa-ra:before, .addondemo .fa-resistance:before, .addondemo .fa-rebel:before {
 	content: "\f1d0";
 }
 
@@ -4192,6 +4210,142 @@ div.v-layout.v-horizontal.v-widget {
 
 .addondemo .fa-percent:before {
 	content: "\f295";
+}
+
+.addondemo .fa-gitlab:before {
+	content: "\f296";
+}
+
+.addondemo .fa-wpbeginner:before {
+	content: "\f297";
+}
+
+.addondemo .fa-wpforms:before {
+	content: "\f298";
+}
+
+.addondemo .fa-envira:before {
+	content: "\f299";
+}
+
+.addondemo .fa-universal-access:before {
+	content: "\f29a";
+}
+
+.addondemo .fa-wheelchair-alt:before {
+	content: "\f29b";
+}
+
+.addondemo .fa-question-circle-o:before {
+	content: "\f29c";
+}
+
+.addondemo .fa-blind:before {
+	content: "\f29d";
+}
+
+.addondemo .fa-audio-description:before {
+	content: "\f29e";
+}
+
+.addondemo .fa-volume-control-phone:before {
+	content: "\f2a0";
+}
+
+.addondemo .fa-braille:before {
+	content: "\f2a1";
+}
+
+.addondemo .fa-assistive-listening-systems:before {
+	content: "\f2a2";
+}
+
+.addondemo .fa-asl-interpreting:before, .addondemo .fa-american-sign-language-interpreting:before {
+	content: "\f2a3";
+}
+
+.addondemo .fa-deafness:before, .addondemo .fa-hard-of-hearing:before, .addondemo .fa-deaf:before {
+	content: "\f2a4";
+}
+
+.addondemo .fa-glide:before {
+	content: "\f2a5";
+}
+
+.addondemo .fa-glide-g:before {
+	content: "\f2a6";
+}
+
+.addondemo .fa-signing:before, .addondemo .fa-sign-language:before {
+	content: "\f2a7";
+}
+
+.addondemo .fa-low-vision:before {
+	content: "\f2a8";
+}
+
+.addondemo .fa-viadeo:before {
+	content: "\f2a9";
+}
+
+.addondemo .fa-viadeo-square:before {
+	content: "\f2aa";
+}
+
+.addondemo .fa-snapchat:before {
+	content: "\f2ab";
+}
+
+.addondemo .fa-snapchat-ghost:before {
+	content: "\f2ac";
+}
+
+.addondemo .fa-snapchat-square:before {
+	content: "\f2ad";
+}
+
+.addondemo .fa-pied-piper:before {
+	content: "\f2ae";
+}
+
+.addondemo .fa-first-order:before {
+	content: "\f2b0";
+}
+
+.addondemo .fa-yoast:before {
+	content: "\f2b1";
+}
+
+.addondemo .fa-themeisle:before {
+	content: "\f2b2";
+}
+
+.addondemo .fa-google-plus-circle:before, .addondemo .fa-google-plus-official:before {
+	content: "\f2b3";
+}
+
+.addondemo .fa-fa:before, .addondemo .fa-font-awesome:before {
+	content: "\f2b4";
+}
+
+.addondemo .sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+}
+
+.addondemo .sr-only-focusable:active, .addondemo .sr-only-focusable:focus {
+	position: static;
+	width: auto;
+	height: auto;
+	margin: 0;
+	overflow: visible;
+	clip: auto;
 }
 
 .addondemo.v-app, .addondemo.v-app-loading {

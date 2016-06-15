@@ -32,6 +32,9 @@ WebContent/WEB-INF
 # PDT-specific
 .buildpath
 
+# Google client ID and Secret for web application
+src/client_secret.apps.googleusercontent.com.json
+
 
 #################
 ## Visual Studio

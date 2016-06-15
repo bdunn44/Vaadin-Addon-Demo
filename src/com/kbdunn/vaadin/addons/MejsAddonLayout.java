@@ -40,6 +40,7 @@ import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.themes.ValoTheme;
 import com.vaadin.util.FileTypeResolver;
 
+@SuppressWarnings("unused")
 public class MejsAddonLayout extends VerticalLayout implements 
 		CanPlayListener, LoadedDataListener, LoadedMetadataListener, PausedListener, 
 		PlayedListener, SeekedListener, VolumeChangedListener, PlaybackEndedListener, PlayingListener, StateUpdatedListener {
@@ -132,8 +133,8 @@ public class MejsAddonLayout extends VerticalLayout implements
 		playerLayout.addComponent(player);
 		playerLayout.setComponentAlignment(player, Alignment.MIDDLE_CENTER);
 		
-		Label link = new Label("<a href='https://vaadin.com/addon/mediaelementjs-player' "
-				+ "target='_blank'>https://vaadin.com/addon/mediaelementjs-player</a>", ContentMode.HTML);
+		Label link = new Label("<a href='https://vaadin.com/directory#!addon/mediaelementjs-player' "
+				+ "target='_blank'>https://vaadin.com/directory#!addon/mediaelementjs-player</a>", ContentMode.HTML);
 		link.setSizeUndefined();
 		link.addStyleName(ValoTheme.LABEL_SMALL);
 		addComponent(link);

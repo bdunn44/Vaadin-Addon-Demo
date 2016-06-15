@@ -85,7 +85,7 @@ public class FontAwesomeAddonLayout extends VerticalLayout {
 		iconLayout.setMargin(true);
 		iconDisplay.setContent(iconLayout);
 		
-		Label link = new Label("<a href='https://vaadin.com/addon/fontawesomelabel' target='_blank'>https://vaadin.com/addon/fontawesomelabel</a>", ContentMode.HTML);
+		Label link = new Label("<a href='https://vaadin.com/directory#!addon/fontawesomelabel' target='_blank'>https://vaadin.com/directory#!addon/fontawesomelabel</a>", ContentMode.HTML);
 		link.setSizeUndefined();
 		link.addStyleName(ValoTheme.LABEL_SMALL);
 		addComponent(link);

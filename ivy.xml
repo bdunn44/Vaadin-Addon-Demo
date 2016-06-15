@@ -41,5 +41,11 @@
 		<!--dependency org="com.vaadin" name="vaadin-client-compiler"
 			rev="&vaadin.version;" conf="widgetset-compile->default" /-->
 		
+		<!-- Scribe -->
+		<dependency org="com.github.scribejava" name="scribejava-apis" rev="2.7.3"/>
+		
+		<!-- Jackson -->
+		<dependency org="com.fasterxml.jackson.core" name="jackson-core" rev="2.7.4"/>
+		
 	</dependencies>
 </ivy-module>

@@ -6,7 +6,7 @@ import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.server.VaadinServlet;
 
 @WebServlet(value = "/*", asyncSupported = true)
-@VaadinServletConfiguration(productionMode = false, ui = VdnUI.class)
+@VaadinServletConfiguration(productionMode = true, ui = VdnUI.class)
 public class VdnServlet extends VaadinServlet  { 
 	private static final long serialVersionUID = 1L; 
 }
